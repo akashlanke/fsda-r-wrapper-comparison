@@ -1,0 +1,52 @@
+pyfsda call                                                | A / C                          | B
+start(check_version=False)                                 | no R equivalent (pyfsda helper) | same
+load("stars.txt")                                          | no R equivalent (pyfsda helper) | same
+boxplotb(data)                                             | fsda$boxplotb(data)            | not generated -> fsda_call()
+xlabel('Log effective surface temperature')                | fsda$xlabel('Log effective surface) | not generated -> fsda_call()
+ylabel('Log light intensity')                              | fsda$ylabel('Log light intensity') | not generated -> fsda_call()
+stop()                                                     | no R equivalent (pyfsda helper) | same
+corrNominal(N, dispresults=True, echo_output=True)         | fsda$corrNominal(N, dispresults=TRUE, e) | corrNominal(...)
+corrNominal(N, dispresults=False, frames=True)             | fsda$corrNominal(N, dispresults=FALSE, ) [drop frames] | corrNominal(...) [drop]
+rng(42, nargout=0)                                         | fsda$rng(42, nargout=0)        | not generated -> fsda_call()
+FSM(Y, plots=plots)                                        | fsda$FSM(Y, plots=plots)       | not generated -> fsda_call()
+load("swiss_banknotes", frames=True)                       | no R equivalent (pyfsda helper) | same
+unibiv(Y)                                                  | fsda$unibiv(Y)                 | not generated -> fsda_call()
+FSMeda(Y, bs, plots=1)                                     | fsda$FSMeda(Y, bs, plots=1)    | not generated -> fsda_call()
+load("stars")                                              | no R equivalent (pyfsda helper) | same
+FSR(y, X, nsamp=0)                                         | fsda$FSR(y, X, nsamp=0)        | FSR(...)
+load("wool", frames=True)                                  | no R equivalent (pyfsda helper) | same
+FSRaddt(y, X, nsamp=0, intercept=True, plots=1)            | fsda$FSRaddt(y, X, nsamp=0, interce) | not generated -> fsda_call()
+grpstatsFS(df, [], frames=True)                            | fsda$grpstatsFS(df, [], frames=TRUE) [drop frames] | not generated -> fsda_call() [drop]
+grpstatsFS(df, [])                                         | fsda$grpstatsFS(df, [])        | not generated -> fsda_call()
+load("swiss_banknotes.txt")                                | no R equivalent (pyfsda helper) | same
+unibiv(data)                                               | fsda$unibiv(data)              | not generated -> fsda_call()
+FSMeda(data, bs)                                           | fsda$FSMeda(data, bs)          | not generated -> fsda_call()
+malfwdplot(out, nargout=0)                                 | fsda$malfwdplot(out, nargout=0) | not generated -> fsda_call()
+rng(1000, nargout=0)                                       | fsda$rng(1000, nargout=0)      | not generated -> fsda_call()
+LXS(y, X, nsamp=10000, store="lxs_out")                    | fsda$LXS(y, X, nsamp=10000, sto) [drop store] | not generated -> fsda_call() [drop]
+FSReda(y, X, ref_lxs.field("bs"), store="eda_out")         | fsda$FSReda(y, X, ref_lxs.field("b) [drop store] | not generated -> fsda_call() [drop]
+resfwdplot(...)                                            | fsda$resfwdplot(...)           | not generated -> fsda_call()
+resfwdplot(ref_eda, fground=fground, databrush=databrush,) | fsda$resfwdplot(ref_eda, fground=fgrou) | not generated -> fsda_call()
+resfwdplot(ref_eda, fground=fground, nargout=0)            | fsda$resfwdplot(ref_eda, fground=fgrou) | not generated -> fsda_call()
+fetch(ref_eda.field("RES"))                                | no R equivalent (pyfsda helper) | same
+fetch(ref_eda.field("mdr"))                                | no R equivalent (pyfsda helper) | same
+clear(ref_lxs, ref_eda)                                    | no R equivalent (pyfsda helper) | same
+LXS(y, X, nsamp=10000)                                     | fsda$LXS(y, X, nsamp=10000)    | not generated -> fsda_call()
+FSReda(y, X, out_lxs["bs"])                                | fsda$FSReda(y, X, out_lxs["bs"]) | not generated -> fsda_call()
+resfwdplot(out1, fground=fground, databrush=databrush, na) | fsda$resfwdplot(out1, fground=fground,) | not generated -> fsda_call()
+resfwdplot(out1, fground=fground, nargout=0)               | fsda$resfwdplot(out1, fground=fground,) | not generated -> fsda_call()
+Score(y, X, la=LA, intercept=True)                         | fsda$Score(y, X, la=LA, intercept) | Score(...)
+load("geyser2.txt")                                        | no R equivalent (pyfsda helper) | same
+rng(1, nargout=0)                                          | fsda$rng(1, nargout=0)         | not generated -> fsda_call()
+tclust(Y, k, alpha, restrfactor, plots=1)                  | fsda$tclust(Y, k, alpha, restrfact) | not generated -> fsda_call()
+tkmeans(Y, 3, 0.03, plots=1)                               | fsda$tkmeans(Y, 3, 0.03, plots=1) | not generated -> fsda_call()
+load("stack_loss.mat")                                     | no R equivalent (pyfsda helper) | same
+FSR(y, X, plots=0)                                         | fsda$FSR(y, X, plots=0)        | FSR(...)
+yXplot(y, X)                                               | fsda$yXplot(y, X)              | not generated -> fsda_call()
+mahalFS(Y, MU, SIGMA)                                      | fsda$mahalFS(Y, MU, SIGMA)     | mahalFS(...)
+Score(y, X, la=la, intercept=True)                         | fsda$Score(y, X, la=la, intercept) | Score(...)
+mcd(Y, nargout=2)                                          | fsda$mcd(Y, nargout=2)         | mcd(...)
+univariatems(y, X, frames=True)                            | fsda$univariatems(y, X, frames=TRUE) [drop frames] | not generated -> fsda_call() [drop]
+to_dataframe(table_dict)                                   | no R equivalent (pyfsda helper) | same
+
+SUMMARY distinct_calls=49 routine_calls=36 helper_calls=13 routine_calls_using_pyfsda_only_kwargs=5 B_generated_hits=8

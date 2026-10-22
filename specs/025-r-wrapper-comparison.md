@@ -49,7 +49,7 @@
 - [x] #p1 Branch off upstream `main`; import `packages/fsdabridge/` (A)
 - [x] #p1 Write `gen_r.py` + `tmp_spec.json`; generate `fsdabridgeGen` (B); dry-run the full IR
 - [x] #p1 Build C from A + overlay
-- [ ] #p1 Run rows 1–14; save logs
+- [x] #p1 Run rows 1–14; save logs
 - [ ] #p1 Write `docs/r-wrapper-comparison.md` with matrix, evidence and recommendation
 
 ### Done

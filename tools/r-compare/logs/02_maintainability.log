@@ -1,0 +1,19 @@
+## B: add ace
+ace: IR record taken from parse_fsda output (FSDA JSON has it)
+files differing from packages/fsdabridgeGen after regeneration:
+Files packages/fsdabridgeGen/DESCRIPTION and <regen>/DESCRIPTION differ
+Files packages/fsdabridgeGen/NAMESPACE and <regen>/NAMESPACE differ
+Only in <regen>/R: fsda_ace.R
+Only in <regen>/man: ace.Rd
+count_generated_changed=4
+count_hand_edited=1 (tools/codegen/tmp_spec.json)
+
+## B: add FSRaddt
+FSRaddt: NOT in FSDA functionSignatures.json -> parse_fsda emits no record; a signature entry must be hand-written (as for Score/mcd in tmp_spec.json)
+count_hand_edited=1 (tools/codegen/tmp_spec.json: hand-written signature + types)
+count_generated_changed=4 once that entry exists (same shape as ace above)
+
+## A: fsda$ace(y, X) / fsda$FSRaddt(y, X) need no file change (see 05_live_A.log row 7 / case FSRaddt)
+## C: same as A for calling; completion already lists both:
+True True
+   a routine added to FSDA later: 0 files to call it, 1 data file (fsda_routines.json, regenerated) to complete it

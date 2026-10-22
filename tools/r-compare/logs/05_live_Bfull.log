@@ -1,0 +1,13 @@
+=== spec 025 live rows: approach Bfull (package fsdabridgeGenFull) ===
+fsdabridgeGenFull: starting the MATLAB engine (this takes a moment)...
+session boot + first eval: 4.9 s
+R 4.6.1 | reticulate 1.47.0 | Python 3.12.0 (v3.12.0:0fb18b02c8, Oct  2 2023, 09:45:56) [Clang 13.0.0 (clang-1300.0.29.30)] | MATLAB 26.1.0.3251617 (R2026a) Update 2 | matlabengine 26.1.12
+
+## row 6: generated wrappers
+ROW6 wrappers=83 (fsda_call escape hatch still exported: TRUE)
+
+## row 7: name/value options
+  ace(y, X) vs ace(y, X, maxit = 3) [maxit not in JSON] OK (0.10s) max|ty(default) - ty(maxit=3)| = 1.230e-02 -> option reached MATLAB: TRUE
+  formals(ace): y, X, ..., nargout
+
+DONE

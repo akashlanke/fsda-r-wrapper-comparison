@@ -1,0 +1,16 @@
+A (fsdabridge)
+  hand-written R/                                      files=  3 code=  247 roxygen=  235 comment=  84
+  hand-written tests/                                  files=  3 code=  291 roxygen=    0 comment=  75
+B (fsdabridgeGen, 10 routines)
+  generated wrappers R/fsda_*.R                        files= 10 code=   80 roxygen=  346 comment=  10
+  generated call path R/zz_invoke.R                    files=  1 code=    9 roxygen=    0 comment=   5
+  runtime copied from A (engine.R, session.R)          files=  2 code=  169 roxygen=  148 comment=  40
+  generator tools/codegen/gen_r.py                     non-blank lines=226
+  hand-curated IR tools/codegen/tmp_spec.json          non-blank lines=1947
+  dry run, full IR: generated R/fsda_*.R               files= 83 code=  664 roxygen= 2374 comment=  83
+C (fsdabridgeHybrid = A + overlay)
+  A's R/ minus the replaced completion block (see make_hybrid.R) files=  3 code=  247 roxygen=  235 comment=  84
+  overlay R/ (completion.R, help.R)                    files=  2 code=   31 roxygen=   20 comment=   9
+  overlay tests/                                       files=  1 code=   19 roxygen=    0 comment=   1
+  builder make_hybrid.R                                files=  1 code=   38 roxygen=    0 comment=  11
+  routine list builder make_routine_list.py            non-blank lines=42

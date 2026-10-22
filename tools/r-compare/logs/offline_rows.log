@@ -1,0 +1,62 @@
+## row 3: autocompletion
+A (fsdabridge)
+  .DollarNames(fsda, "Sc"):  Score 
+  TAB on fsda$Sc        :  fsda$Score 
+  TAB on Sc             :   
+  TAB on Score(y, X,    :   
+  TAB on fsda$Score(y,X,:   
+B (fsdabridgeGen)
+  .DollarNames(fsda, "Sc"):  (no fsda object) 
+  TAB on fsda$Sc        :  fsda$Sc 
+  TAB on Sc             :  Score 
+  TAB on Score(y, X,    :  y= X= intercept= la= Lik= nocheck= tukey1df= nargout= 
+  TAB on fsda$Score(y,X,:  y= X= intercept= la= Lik= nocheck= tukey1df= nargout= 
+  formals(Score)        :  y, X, intercept, la, Lik, nocheck, tukey1df, ..., nargout 
+C (fsdabridgeHybrid)
+  .DollarNames(fsda, "Sc"):  Score ScoreYJ ScoreYJall ScoreYJmle ScoreYJpn 
+  TAB on fsda$Sc        :  fsda$Score fsda$ScoreYJ fsda$ScoreYJall fsda$ScoreYJmle fsda$ScoreYJpn 
+  TAB on Sc             :   
+  TAB on Score(y, X,    :   
+  TAB on fsda$Score(y,X,:   
+
+## row 4: documentation
+A: Rd topics=10; ?Score exists=FALSE; help('Score', package=) hits=0
+B: Rd topics=19; ?Score exists=TRUE; help('Score', package=) hits=1
+  Score.Rd -> 100 text lines; head:
+    | Score: Computes the score test for transformation
+    | Description:
+    |      Computes the score test for transformation
+    | Usage:
+    |      Score(
+    |        y,
+    |        X,
+    |        intercept = NULL,
+C: Rd topics=11; ?Score exists=FALSE; help('Score', package=) hits=0
+
+## row 10: namespace clashes (fresh R: library(stats); library(robustbase); library(pkg))
+A:
+  masks/masked:  (none) 
+  conflicts() total:  4 
+B:
+  masks/masked:  (none) 
+  conflicts() total:  4 
+C:
+  masks/masked:  (none) 
+  conflicts() total:  4 
+  B exports also exported by stats: (none)
+  B exports also exported by robustbase: (none)
+  B exports also exported by MASS: (none)
+  B exports also exported by cluster: (none)
+
+## row 11: load time and size
+A: library() median 0.002 s (min 0.001, max 0.002, n=10); tarball 30223 bytes; installed 92 KB
+B: library() median 0.002 s (min 0.001, max 0.002, n=10); tarball 54765 bytes; installed 126 KB
+C: library() median 0.002 s (min 0.001, max 0.003, n=10); tarball 34995 bytes; installed 139 KB
+  fsdabridge: library() 0.002 newly loaded: fsdabridge
+  fsdabridgeGen: library() 0.002 newly loaded: fsdabridgeGen
+  fsdabridgeHybrid: library() 0.002 newly loaded: fsdabridgeHybrid
+  fsdabridgeGenFull: library() 0.002 newly loaded: fsdabridgeGenFull
+  deferred to first call: loadNamespace('reticulate') 0.277 s; MATLAB engine boot: see 'session boot' in 05_live_*.log
+  Bfull (83 wrappers) tarball 273501 bytes
+Bfull (83 generated): (none)
+all 389 inventory names (a 389-wrapper B): stats::supsmu robustbase::Qn robustbase::Sn

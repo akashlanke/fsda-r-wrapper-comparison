@@ -19,8 +19,10 @@ fsda_help = function(name, handle = NULL) {
   if (!is.character(name) || length(name) != 1L || !grepl("^[A-Za-z]\\w*$", name)) {
     stop("name must be a single MATLAB identifier, e.g. \"Score\".", call. = FALSE)
   }
-  txt = eval_m(handle, sprintf("evalc('help %s')", name))
-  structure(paste(as.character(txt), collapse = ""), class = "fsda_help", routine = name)
+  txt = paste(as.character(eval_m(handle, sprintf("evalc('help %s')", name))), collapse = "")
+  # The engine session renders help with command-window hyperlinks; keep the text.
+  txt = gsub("<[^>]+>", "", txt)
+  structure(txt, class = "fsda_help", routine = name)
 }
 
 #' @export
