@@ -1,0 +1,2336 @@
+[
+ {
+  "name": "ace",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": true
+ },
+ {
+  "name": "aceplot",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": true
+ },
+ {
+  "name": "add2boxplot",
+  "folder": "utilities_stat",
+  "category": "VIS-Mult",
+  "has_signature": false
+ },
+ {
+  "name": "add2spm",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": true
+ },
+ {
+  "name": "add2yX",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": true
+ },
+ {
+  "name": "addt",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": true
+ },
+ {
+  "name": "ASbdp",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "ASc",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "ASeff",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "ASpsi",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "ASpsider",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "ASpsix",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "ASrho",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "ASwei",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "avas",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": true
+ },
+ {
+  "name": "avasms",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": true
+ },
+ {
+  "name": "avasmsplot",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": true
+ },
+ {
+  "name": "balloonplot",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": true
+ },
+ {
+  "name": "barnardtest",
+  "folder": "multivariate",
+  "category": "MULT-Categorical",
+  "has_signature": false
+ },
+ {
+  "name": "barVariableWidth",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": true
+ },
+ {
+  "name": "basicPower",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "bc",
+  "folder": "combinatorial",
+  "category": "UTICOMB",
+  "has_signature": true
+ },
+ {
+  "name": "biplotFS",
+  "folder": "multivariate",
+  "category": "VIS-Mult",
+  "has_signature": true
+ },
+ {
+  "name": "boxcoxR",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": true
+ },
+ {
+  "name": "boxplotb",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": true
+ },
+ {
+  "name": "boxtest",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "brushFAN",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "brushRES",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "brushROB",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "bwe",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "cabc",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "carbikeplot",
+  "folder": "graphics",
+  "category": "VIS-Clu",
+  "has_signature": true
+ },
+ {
+  "name": "carbikeplotGPCM",
+  "folder": "graphics",
+  "category": "VIS-Clu",
+  "has_signature": true
+ },
+ {
+  "name": "cascade",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "cdsplot",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": true
+ },
+ {
+  "name": "CEVmodel",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "clickableMultiLegend",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "ClusterRelabel",
+  "folder": "clustering",
+  "category": "UTISTAT",
+  "has_signature": true
+ },
+ {
+  "name": "combsFS",
+  "folder": "combinatorial",
+  "category": "UTICOMB",
+  "has_signature": true
+ },
+ {
+  "name": "CorAna",
+  "folder": "multivariate",
+  "category": "MULT-Categorical",
+  "has_signature": true
+ },
+ {
+  "name": "CorAnaplot",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": true
+ },
+ {
+  "name": "corrcdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": true
+ },
+ {
+  "name": "corrinv",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": true
+ },
+ {
+  "name": "corrNominal",
+  "folder": "multivariate",
+  "category": "MULT-Categorical",
+  "has_signature": true
+ },
+ {
+  "name": "corrOrdinal",
+  "folder": "multivariate",
+  "category": "MULT-Categorical",
+  "has_signature": true
+ },
+ {
+  "name": "corrpdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": true
+ },
+ {
+  "name": "covplot",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": true
+ },
+ {
+  "name": "CressieRead",
+  "folder": "multivariate",
+  "category": "MULT-Categorical",
+  "has_signature": false
+ },
+ {
+  "name": "crosstab2datamatrix",
+  "folder": "utilities_stat",
+  "category": "MULT-Categorical",
+  "has_signature": false
+ },
+ {
+  "name": "ctlcurves",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "ctlcurvesplot",
+  "folder": "graphics",
+  "category": "VIS-Clu",
+  "has_signature": true
+ },
+ {
+  "name": "ctsub",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "dempk",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "distribspec",
+  "folder": "graphics",
+  "category": "UTISTAT",
+  "has_signature": true
+ },
+ {
+  "name": "ellipse",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "estregimeTAR",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": true
+ },
+ {
+  "name": "exactcdf",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "existFS",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "fanBIC",
+  "folder": "regression",
+  "category": "VIS-Reg",
+  "has_signature": true
+ },
+ {
+  "name": "fanBICpn",
+  "folder": "regression",
+  "category": "VIS-Reg",
+  "has_signature": false
+ },
+ {
+  "name": "fanplot",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": true
+ },
+ {
+  "name": "fanplotFS",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": false
+ },
+ {
+  "name": "FE_int_vol",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FE_int_vol_Fejer",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FE_spot_vol",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FE_spot_vol_FFT",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "findDir",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "findFile",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "FM_cov_matrix",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FM_int_cov",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FM_int_lev",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FM_int_quart",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FM_int_vol",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FM_int_volvol",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FM_spot_cov",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FM_spot_lev",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FM_spot_quart",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FM_spot_vol",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FM_spot_volvol",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "FNChygecdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "FNChygeinv",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "FNChygepdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "FNChygernd",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "forecastH",
+  "folder": "regression",
+  "category": "REG-Hetero",
+  "has_signature": false
+ },
+ {
+  "name": "forecastTS",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "FowlkesMallowsIndex",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "FSCorAna",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "FSCorAnaeda",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "FSCorAnaenv",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "FSM",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "FSMbonfbound",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "FSMbsb",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "FSMeda",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "FSMedaeasy",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "FSMenvmmd",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "FSMfan",
+  "folder": "multivariate",
+  "category": "MULT-Transformations",
+  "has_signature": false
+ },
+ {
+  "name": "FSMinvmmd",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "FSMmmd",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "FSMmmdeasy",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "FSMmmdrs",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "FSMtra",
+  "folder": "multivariate",
+  "category": "MULT-Transformations",
+  "has_signature": false
+ },
+ {
+  "name": "FSR",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": true
+ },
+ {
+  "name": "FSRaddt",
+  "folder": "regression",
+  "category": "REG-ModelSelection",
+  "has_signature": false
+ },
+ {
+  "name": "FSRB",
+  "folder": "regression",
+  "category": "REG-Bayes",
+  "has_signature": false
+ },
+ {
+  "name": "FSRBbsb",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "FSRBeda",
+  "folder": "regression",
+  "category": "REG-Bayes",
+  "has_signature": false
+ },
+ {
+  "name": "FSRBmdr",
+  "folder": "regression",
+  "category": "REG-Bayes",
+  "has_signature": false
+ },
+ {
+  "name": "FSRbonfbound",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "FSRBr",
+  "folder": "regression",
+  "category": "REG-Bayes",
+  "has_signature": false
+ },
+ {
+  "name": "FSRbsb",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "FSRcp",
+  "folder": "regression",
+  "category": "REG-ModelSelection",
+  "has_signature": false
+ },
+ {
+  "name": "FSReda",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "FSRedaCens",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "FSRenvmdr",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "FSRfan",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": false
+ },
+ {
+  "name": "FSRfanCens",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": false
+ },
+ {
+  "name": "FSRH",
+  "folder": "regression",
+  "category": "REG-Hetero",
+  "has_signature": false
+ },
+ {
+  "name": "FSRHbsb",
+  "folder": "regression",
+  "category": "REG-Hetero",
+  "has_signature": false
+ },
+ {
+  "name": "FSRHeda",
+  "folder": "regression",
+  "category": "REG-Hetero",
+  "has_signature": false
+ },
+ {
+  "name": "FSRHmdr",
+  "folder": "regression",
+  "category": "REG-Hetero",
+  "has_signature": false
+ },
+ {
+  "name": "FSRinvmdr",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "FSRmdr",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "FSRmdrrs",
+  "folder": "clustering",
+  "category": "CLUS-RobClaREG",
+  "has_signature": true
+ },
+ {
+  "name": "FSRms",
+  "folder": "regression",
+  "category": "REG-ModelSelection",
+  "has_signature": false
+ },
+ {
+  "name": "FSRr",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "FSRts",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "FSRtsbsb",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "FSRtsmdr",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "funnelchart",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": true
+ },
+ {
+  "name": "genr8next",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "genSigmaGPCM",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "geoplotFS",
+  "folder": "multivariate",
+  "category": "VIS-Mult",
+  "has_signature": false
+ },
+ {
+  "name": "GowerIndex",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "grpstatsFS",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": true
+ },
+ {
+  "name": "GUIautocorr",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "GUIconcentration",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "GUIcorr",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "GUIcov",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "GUImad",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "GUIpowermean",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "GUIquantile",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "GUIregress",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "GUIskewness",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "GUIstd",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "GUItrimmean",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "GUIvar",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "GYfilt",
+  "folder": "regression",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HAbdp",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HAc",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HAeff",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HApsi",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HApsider",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HApsix",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HArho",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HAwei",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "Heston1D",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "Heston2D",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "histFS",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": true
+ },
+ {
+  "name": "htmlwriteFS",
+  "folder": "utilities_help",
+  "category": "UTIHELP",
+  "has_signature": false
+ },
+ {
+  "name": "HUc",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HUeff",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HUpsi",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HUpsider",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HUpsix",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HUrho",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HUwei",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HYPbdp",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HYPc",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HYPck",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HYPeff",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HYPk",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HYPpsi",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HYPpsider",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HYPpsix",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HYPrho",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "HYPwei",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "inversegamcdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "inversegaminv",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "inversegampdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "isfunction",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "kdebiv",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "levfwdplot",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": true
+ },
+ {
+  "name": "lexunrank",
+  "folder": "combinatorial",
+  "category": "UTICOMB",
+  "has_signature": true
+ },
+ {
+  "name": "lga",
+  "folder": "clustering",
+  "category": "CLUS-RobClaREG",
+  "has_signature": true
+ },
+ {
+  "name": "logfactorial",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "logmvnpdfFS",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "LTSts",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "LTStsLSmult",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "LTStsVarSel",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "LXS",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "m2ipynb",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "mahalCorAna",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "mahalFS",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "makecontentsfileFS",
+  "folder": "utilities_help",
+  "category": "UTIHELP",
+  "has_signature": false
+ },
+ {
+  "name": "malfwdplot",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": true
+ },
+ {
+  "name": "malindexplot",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": true
+ },
+ {
+  "name": "mcd",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "mcdCorAna",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "mcdeda",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "mdpattern",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "mdpd",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "mdpdR",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "mdpdReda",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "mdrplot",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": true
+ },
+ {
+  "name": "mdrrsplot",
+  "folder": "graphics",
+  "category": "CLUS-RobClaREG",
+  "has_signature": true
+ },
+ {
+  "name": "medcouple",
+  "folder": "utilities",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "mFNChygepdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "mFNChygernd",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "MixSim",
+  "folder": "clustering",
+  "category": "CLUS-MixSim",
+  "has_signature": true
+ },
+ {
+  "name": "MixSimreg",
+  "folder": "clustering",
+  "category": "CLUS-MixSim",
+  "has_signature": true
+ },
+ {
+  "name": "Mlocation",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "Mlocsca",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "mmdplot",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": true
+ },
+ {
+  "name": "mmdrsplot",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": true
+ },
+ {
+  "name": "MMmult",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "MMmultcore",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "MMmulteda",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "MMreg",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "MMregcore",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "MMregeda",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "moonplot",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": true
+ },
+ {
+  "name": "mreadFS",
+  "folder": "utilities_help",
+  "category": "UTIHELP",
+  "has_signature": false
+ },
+ {
+  "name": "Mscale",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "msdcutoff",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "mtR",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "multialign2ref",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "multialignHeader",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "mve",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "mveeda",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "mWNChygepdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "mWNChygernd",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "nchoosekFS",
+  "folder": "combinatorial",
+  "category": "UTICOMB",
+  "has_signature": true
+ },
+ {
+  "name": "ncpci",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "ncx2mixtcdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "normBoxCox",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "normYJ",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "normYJpn",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "openMatlabFileFromHTML",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "OPTbdp",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "OPTc",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "OPTeff",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "OptimalCuttingFrequency",
+  "folder": "utilities_stat",
+  "category": "FMvol",
+  "has_signature": false
+ },
+ {
+  "name": "OPTpsi",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "OPTpsider",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "OPTpsix",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "OPTrho",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "OPTwei",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "OSILA",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "overlap",
+  "folder": "clustering",
+  "category": "CLUS-MixSim",
+  "has_signature": true
+ },
+ {
+  "name": "overlapmap",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "pcaFS",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": true
+ },
+ {
+  "name": "PDbdp",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "PDc",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "PDeff",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "PDpsi",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "PDpsider",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "PDpsix",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "PDrho",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "PDwei",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "pivotCoord",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "pivotCoordInv",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "polarhistogramFS",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": true
+ },
+ {
+  "name": "position",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "Powertra",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "publishBibliography",
+  "folder": "utilities_help",
+  "category": "UTIHELP",
+  "has_signature": false
+ },
+ {
+  "name": "publishFS",
+  "folder": "utilities_help",
+  "category": "UTIHELP",
+  "has_signature": true
+ },
+ {
+  "name": "publishFunctionAlpha",
+  "folder": "utilities_help",
+  "category": "UTIHELP",
+  "has_signature": false
+ },
+ {
+  "name": "publishFunctionCate",
+  "folder": "utilities_help",
+  "category": "UTIHELP",
+  "has_signature": false
+ },
+ {
+  "name": "Qn",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "qqplotFS",
+  "folder": "utilities_stat",
+  "category": "VIS-Reg",
+  "has_signature": false
+ },
+ {
+  "name": "quickselectFS",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "quickselectFS_demo",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "quickselectFSw",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "quickselectFSw_demo",
+  "folder": "examples",
+  "category": "GUI",
+  "has_signature": false
+ },
+ {
+  "name": "RandIndexFS",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "randsampleFS",
+  "folder": "combinatorial",
+  "category": "UTICOMB",
+  "has_signature": true
+ },
+ {
+  "name": "rcontFS",
+  "folder": "multivariate",
+  "category": "MULT-Categorical",
+  "has_signature": false
+ },
+ {
+  "name": "regressB",
+  "folder": "regression",
+  "category": "REG-Bayes",
+  "has_signature": false
+ },
+ {
+  "name": "regressCens",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "regressCensTra",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "regressH",
+  "folder": "regression",
+  "category": "REG-Hetero",
+  "has_signature": false
+ },
+ {
+  "name": "regressHart",
+  "folder": "regression",
+  "category": "REG-Hetero",
+  "has_signature": false
+ },
+ {
+  "name": "regressHhar",
+  "folder": "regression",
+  "category": "REG-Hetero",
+  "has_signature": false
+ },
+ {
+  "name": "regressts",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "removeExtraSpacesLF",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "repDupValWithMean",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "resfwdplot",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": true
+ },
+ {
+  "name": "resindexplot",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": false
+ },
+ {
+  "name": "restrdeter",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "restrdeterGPCM",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "restreigen",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "restreigeneasy",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "restreigenmemopt",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "restrshapeExact",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "restrshapeGPCM",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "restrSigmaGPCM",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "RhoPsiWei",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "RKbdp",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "RKeff",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "RKpsi",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "RKpsider",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "RKpsix",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "RKrho",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "RKwei",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "rlga",
+  "folder": "clustering",
+  "category": "CLUS-RobClaREG",
+  "has_signature": true
+ },
+ {
+  "name": "rlsmo",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": false
+ },
+ {
+  "name": "RobCov",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "RobRegrSize",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "rows2varsFS",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "rthin",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "scatterboxplot",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": false
+ },
+ {
+  "name": "Score",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": false
+ },
+ {
+  "name": "ScoreYJ",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": false
+ },
+ {
+  "name": "ScoreYJall",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": false
+ },
+ {
+  "name": "ScoreYJmle",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": false
+ },
+ {
+  "name": "ScoreYJpn",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": false
+ },
+ {
+  "name": "SDest",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "SETARX",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "setdiffFS",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "setToolboxStartEnd",
+  "folder": "utilities_help",
+  "category": "UTIHELP",
+  "has_signature": false
+ },
+ {
+  "name": "shuffling",
+  "folder": "combinatorial",
+  "category": "UTICOMB",
+  "has_signature": true
+ },
+ {
+  "name": "simdataset",
+  "folder": "clustering",
+  "category": "CLUS-MixSim",
+  "has_signature": true
+ },
+ {
+  "name": "simdatasetreg",
+  "folder": "clustering",
+  "category": "CLUS-MixSim",
+  "has_signature": true
+ },
+ {
+  "name": "simulateLM",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "simulateTS",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "smothr",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": false
+ },
+ {
+  "name": "Smult",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "Smulteda",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "Sn",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "SparseTableTest",
+  "folder": "multivariate",
+  "category": "MULT-Categorical",
+  "has_signature": false
+ },
+ {
+  "name": "spmplot",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": true
+ },
+ {
+  "name": "Sreg",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "Sregeda",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "subsets",
+  "folder": "combinatorial",
+  "category": "UTICOMB",
+  "has_signature": true
+ },
+ {
+  "name": "suplabel",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "supsmu",
+  "folder": "regression",
+  "category": "REG-Transformations",
+  "has_signature": false
+ },
+ {
+  "name": "tabledisp",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "tabulateFS",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "Taureg",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "TBbdp",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "TBc",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "TBeff",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "tBothSides",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "TBpsi",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "TBpsider",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "TBpsix",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "TBrho",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "TBwei",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "tclust",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "tclusteda",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "tclustIC",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "tclustICgpcm",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "tclustICplot",
+  "folder": "graphics",
+  "category": "VIS-Clu",
+  "has_signature": false
+ },
+ {
+  "name": "tclustICplotGPCM",
+  "folder": "graphics",
+  "category": "VIS-Clu",
+  "has_signature": false
+ },
+ {
+  "name": "tclustICsol",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "tclustICsolGPCM",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "tclustreg",
+  "folder": "clustering",
+  "category": "CLUS-RobClaREG",
+  "has_signature": true
+ },
+ {
+  "name": "tclustregeda",
+  "folder": "clustering",
+  "category": "CLUS-RobClaREG",
+  "has_signature": true
+ },
+ {
+  "name": "tclustregIC",
+  "folder": "clustering",
+  "category": "CLUS-RobClaREG",
+  "has_signature": true
+ },
+ {
+  "name": "tkmeans",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": true
+ },
+ {
+  "name": "tobitcdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "tobitinv",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "tobitpdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "tobitrnd",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "triu2vec",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "twdcdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "twdpdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "twdrnd",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "txmerge",
+  "folder": "clustering",
+  "category": "CLUS-RobClaMULT",
+  "has_signature": false
+ },
+ {
+  "name": "unibiv",
+  "folder": "multivariate",
+  "category": "MULT-Multivariate",
+  "has_signature": false
+ },
+ {
+  "name": "univariatems",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "upperfracpos",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "verLessThanFS",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "vervaatrnd",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "vervaatsim",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "vervaatxdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "VIOM",
+  "folder": "regression",
+  "category": "REG-Regression",
+  "has_signature": false
+ },
+ {
+  "name": "waterfallchart",
+  "folder": "graphics",
+  "category": "VIS-Mult",
+  "has_signature": false
+ },
+ {
+  "name": "wedgeplot",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": false
+ },
+ {
+  "name": "winsor",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "WNChygecdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "WNChygeinv",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "WNChygepdf",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "WNChygernd",
+  "folder": "utilities_stat",
+  "category": "ProbDist",
+  "has_signature": false
+ },
+ {
+  "name": "wraptextFS",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ },
+ {
+  "name": "wthin",
+  "folder": "utilities_stat",
+  "category": "UTISTAT",
+  "has_signature": false
+ },
+ {
+  "name": "xmlcreateFS",
+  "folder": "utilities_help",
+  "category": "UTIHELP",
+  "has_signature": false
+ },
+ {
+  "name": "yXplot",
+  "folder": "graphics",
+  "category": "VIS-Reg",
+  "has_signature": false
+ },
+ {
+  "name": "zscoreFS",
+  "folder": "utilities",
+  "category": "UTIGEN",
+  "has_signature": false
+ }
+]
