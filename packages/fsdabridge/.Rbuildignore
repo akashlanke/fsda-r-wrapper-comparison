@@ -1,0 +1,14 @@
+^\.venv$
+^\.venv/
+^data-raw$
+^\.github$
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.Rhistory$
+^\.RData$
+^\.DS_Store$
+__pycache__
+^fsdabridge_.*\.tar\.gz$
+^fsdabridge\.Rcheck$
+^README\.md$
+^PUBLISHING\.md$
