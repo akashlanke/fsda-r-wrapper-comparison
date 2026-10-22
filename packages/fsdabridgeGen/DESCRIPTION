@@ -1,0 +1,24 @@
+Package: fsdabridgeGen
+Type: Package
+Title: Generated Wrappers for the FSDA MATLAB Toolbox
+Version: 0.0.1
+Authors@R:
+    person("FSDA-bridge", "contributors", email = "fsda-bridge@example.org",
+           role = c("aut", "cre"))
+Description: Per-routine R wrappers for 10 routines of the FSDA MATLAB
+    toolbox for robust statistics, generated from the toolbox's function
+    signature metadata. Calls go through 'reticulate' and the MATLAB Engine
+    API for Python. MATLAB, the FSDA toolbox and the 'matlabengine' Python
+    package are required at runtime only.
+License: EUPL (>= 1.2)
+Encoding: UTF-8
+Imports:
+    reticulate,
+    utils
+Suggests:
+    testthat (>= 3.0.0)
+SystemRequirements: MATLAB (>= R2025b), FSDA MATLAB toolbox, Python (>=
+    3.9), matlabengine (Python package matching the MATLAB release)
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.0

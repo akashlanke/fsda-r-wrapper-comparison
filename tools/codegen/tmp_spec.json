@@ -1,0 +1,1947 @@
+[
+  {
+    "name": "mahalFS",
+    "category": "UTISTAT",
+    "description_short": "Computes Mahalanobis distances (in squared units) for each row of matrix Y",
+    "description_long": "",
+    "inputs": [
+      {
+        "name": "Y",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "numeric",
+            "2d"
+          ]
+        ],
+        "purpose_short": null,
+        "default": null,
+        "purpose_long": "Input data. Matrix. n x v data matrix; n observations and v variables. Rows of Y represent observations, and columns represent variables. Missing values (NaN's) and infinite values (Inf's) are allowed, since observations (rows) with missing or infinite values will automatically be excluded from the computations. Data Types - single|double"
+      },
+      {
+        "name": "MU",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "numeric",
+            "vector"
+          ]
+        ],
+        "purpose_short": null,
+        "default": null,
+        "purpose_long": "Centroid. Vector. 1 x v vector containing centroid to use"
+      },
+      {
+        "name": "SIGMA",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "numeric",
+            "2d"
+          ]
+        ],
+        "purpose_short": null,
+        "default": null,
+        "purpose_long": "Covariance matrix. Matrix. v x v matrix containing covariance matrix which must be used"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "d",
+        "matlab_type": [
+          [
+            "double",
+            "column"
+          ]
+        ],
+        "short_desc": "Mahalanobis distances.",
+        "long_desc": "Mahalanobis distances. Vector. n x 1 vector which contains the squared Mahalanobid distances. \\[ d(i) = (y_i-\\mu)^T \\times \\Sigma^{-1} \\times (y_i-\\mu), \\qquad i=1, 2, \\ldots, n \\]",
+        "fields": []
+      }
+    ],
+    "see_also": [
+      "mahal"
+    ],
+    "references": [],
+    "fsda_url": "https://rosa.unipr.it/FSDA/mahalFS.html"
+  },
+  {
+    "name": "Score",
+    "category": "REG-Transformations",
+    "description_short": "Computes the score test for transformation",
+    "description_long": "",
+    "inputs": [
+      {
+        "name": "y",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "numeric",
+            "vector"
+          ]
+        ],
+        "purpose_short": null,
+        "default": null,
+        "purpose_long": "Response variable. Vector. A vector with n elements that contains the response variable. It can be either a row or a column vector."
+      },
+      {
+        "name": "X",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "numeric",
+            "2d"
+          ]
+        ],
+        "purpose_short": null,
+        "default": null,
+        "purpose_long": "Predictor variables. Matrix. Data matrix of explanatory variables (also called 'regressors') of dimension (n x p-1). Rows of X represent observations, and columns represent variables. Missing values (NaN's) and infinite values (Inf's) are allowed, since observations (rows) with missing or infinite values will automatically be excluded from the computations."
+      },
+      {
+        "name": "intercept",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Indicator for constant term",
+        "default": null,
+        "purpose_long": "Indicator for constant term. true (default) | false. Indicator for the constant term (intercept) in the fit, specified as the comma-separated pair consisting of 'Intercept' and either true to include or false to remove the constant term from the model. Example - 'intercept',false Data Types - boolean"
+      },
+      {
+        "name": "la",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "numeric",
+            "vector"
+          ]
+        ],
+        "purpose_short": "Transformation parameter",
+        "default": null,
+        "purpose_long": "transformation parameter. Vector. It specifies for which values of the transformation parameter it is necessary to compute the score test. Default value of lambda is la=[-1 -0.5 0 0.5 1]; that is the five most common values of lambda. Example - 'la',[0 0.5] Data Types - double"
+      },
+      {
+        "name": "Lik",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Likelihood for the augmented model",
+        "default": null,
+        "purpose_long": "likelihood for the augmented model. Boolean. If true the value of the likelihood for the augmented model will be produced, else (default) only the value of the score test will be given. Example - 'Lik',false Data Types - logical"
+      },
+      {
+        "name": "nocheck",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Check input arguments",
+        "default": null,
+        "purpose_long": "Check input arguments. Boolean. If nocheck is equal to true no check is performed on matrix y and matrix X. Notice that y and X are left unchanged. In other words, the additional column of ones for the intercept is not added. As default nocheck=false. Example - 'nocheck',true Data Types - boolean"
+      },
+      {
+        "name": "tukey1df",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Tukey test for non-additivity",
+        "default": null,
+        "purpose_long": "Tukey's one df test. Boolean. Tukey's one degree of freedome test for non-additivity. The constructed variable is given by \\[ w_T(\\lambda)= (\\hat z(\\lambda) - \\overline z(\\lambda))^2 / 2 \\overline z(\\lambda) \\] where $z(\\lambda)$ is the transformed response, and $\\hat z(\\lambda)$ are the fitted values on the transformed response. The t test on the constructed variable above provides a test from departures from the assumed linear model and is known in the literature as Tukey's one degree of freedome test for non-additivity. If tukey1df is true the test is computed and returned inside output structure with fieldname ScoreT else (default) the value of the test is not computed. Example - 'tukey1df',true Data Types - boolean"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "outSC",
+        "matlab_type": [
+          [
+            "struct"
+          ]
+        ],
+        "short_desc": null,
+        "long_desc": null,
+        "fields": []
+      }
+    ],
+    "see_also": [
+      "FSRfan",
+      "ScoreYJ",
+      "ScoreYJpn",
+      "normBoxCox",
+      "normYJ"
+    ],
+    "references": [
+      "Atkinson, A.C. and Riani, M. (2000), \"Robust Diagnostic Regression Analysis\", Springer Verlag, New York. [see equation 2.30 for the expression for score test statistic]"
+    ],
+    "fsda_url": "https://rosa.unipr.it/FSDA/Score.html"
+  },
+  {
+    "name": "FSR",
+    "category": "REG-Regression",
+    "description_short": "Computes forward search estimator in linear regression",
+    "description_long": "",
+    "inputs": [
+      {
+        "name": "y",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "numeric",
+            "vector"
+          ]
+        ],
+        "purpose_short": "Response variable",
+        "default": null,
+        "purpose_long": "Response variable. Vector. Response variable, specified as a vector of length n, where n is the number of observations. Each entry in y is the response for the corresponding row of X. Missing values (NaN's) and infinite values (Inf's) are allowed, since observations (rows) with missing or infinite values will automatically be excluded from the computations."
+      },
+      {
+        "name": "X",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "numeric",
+            "2d"
+          ]
+        ],
+        "purpose_short": "Predictor variables",
+        "default": null,
+        "purpose_long": "Predictor variables. Matrix. Matrix of explanatory variables (also called 'regressors') of dimension n x (p-1) where p denotes the number of explanatory variables including the intercept. Rows of X represent observations, and columns represent variables. By default, there is a constant term in the model, unless you explicitly remove it using input option intercept, so do not include a column of 1s in X. Missing values (NaN's) and infinite values (Inf's) are allowed, since observations (rows) with missing or infinite values will automatically be excluded from the computations."
+      },
+      {
+        "name": "bsbmfullrank",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Dealing with singular X matrix",
+        "default": null,
+        "purpose_long": "Dealing with singular X matrix. Boolean. This option tells how to behave in case subset at step m (say bsbm) produces a singular X. In other words, this options controls what to do when rank(X(bsbm,:)) is smaller then number of explanatory variables. If bsbmfullrank =true (default) these units (whose number is say mnofullrank) are constrained to enter the search in the final n-mnofullrank steps else the search continues using as estimate of beta at step m the estimate of beta found in the previous step. Example - 'bsbmfullrank',false Data Types - logical"
+      },
+      {
+        "name": "bonflev",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Signal to use to identify outliers",
+        "default": null,
+        "purpose_long": "Signal to use to identify outliers. Scalar or empty value (default). Option to be used if the distribution of the data is strongly non normal and, thus, the general signal detection rule based on consecutive exceedances cannot be used. In this case bonflev can be: - a scalar smaller than 1 which specifies the confidence level for a signal and a stopping rule based on the comparison of the minimum MD with a Bonferroni bound. For example if bonflev=0.99 the procedure stops when the trajectory exceeds for the first time the 99% bonferroni bound. - A scalar value greater than 1. In this case the procedure stops when the residual trajectory exceeds for the first time this value. Default value is '', which means to rely on general rules based on consecutive exceedances. Example - 'bonflev',0.99 Data Types - double"
+      },
+      {
+        "name": "h",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "numeric",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "The number of observations that have determined the least trimmed squares estimator",
+        "default": null,
+        "purpose_long": "The number of observations that have determined the least trimmed squares estimator. Scalar. h is an integer greater or equal than p but smaller then n. Generally if the purpose is outlier detection h=[0.5*(n+p+1)] (default value). h can be smaller than this threshold if the purpose is to find subgroups of homogeneous observations. In this function the LTS/LMS estimator is used just to initialize the search. Example - 'h',round(n*0,75) Data Types - double"
+      },
+      {
+        "name": "init",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "numeric",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Search initialization",
+        "default": null,
+        "purpose_long": "Search initialization. Scalar. It specifies the initial subset size to start monitoring exceedances of minimum deletion residual, if init is not specified it set equal"
+      },
+      {
+        "name": "intercept",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Indicator for constant term",
+        "default": null,
+        "purpose_long": "Indicator for constant term. true (default) | false. Indicator for the constant term (intercept) in the fit, specified as the comma-separated pair consisting of 'Intercept' and either true to include or false to remove the constant term from the model. Example - 'intercept',false Data Types - boolean"
+      },
+      {
+        "name": "lms",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "numeric",
+            "scalar"
+          ],
+          [
+            "numeric",
+            "vector"
+          ],
+          [
+            "struct"
+          ]
+        ],
+        "purpose_short": "Criterion to use to find the initial subset to initialize the search",
+        "default": null,
+        "purpose_long": "Criterion to use to find the initial subset to initialize the search. Scalar, vector or structure. lms specifies the criterion to use to find the initial subset to initialize the search (LMS, LTS with concentration steps, LTS without concentration steps or subset supplied directly by the user). The default value is 1 (Least Median of Squares is computed to initialize the search). On the other hand, if the user wants to initialize the search with LTS with all the default options for concentration steps then lms=2. If the user wants to use LTS without concentration steps, lms can be a scalar different from 1 or 2. If lms is a struct it is possible to control a series of options for concentration steps (for more details see option lms inside LXS.m) LXS.m. If, on the other hand, the user wants to initialize the search with a prespecified set of units there are two"
+      },
+      {
+        "name": "msg",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Level of output to display",
+        "default": null,
+        "purpose_long": "Level of output to display. Boolean. It controls whether to display or not messages on the screen If msg==true (default) messages are displayed on the screen about step in which signal took place else no message is displayed on the screen. Example - 'msg',false Data Types - logical"
+      },
+      {
+        "name": "nocheck",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Check input arguments",
+        "default": null,
+        "purpose_long": "Check input arguments. Boolean. If nocheck is equal to true no check is performed on matrix y and matrix X. Notice that y and X are left unchanged. In other words the additional column of ones for the intercept is not added. As default nocheck=false. Example - 'nocheck',true Data Types - double"
+      },
+      {
+        "name": "nsamp",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "scalar",
+            ">=0"
+          ]
+        ],
+        "purpose_short": "Number of subsamples which will be extracted to find the robust estimator",
+        "default": null,
+        "purpose_long": "Number of subsamples which will be extracted to find the robust estimator. Scalar. If nsamp=0 all subsets will be extracted. They will be (n choose p). If the number of all possible subset is <1000 the default is to extract all subsets otherwise just 1000. Example - 'nsamp',1000 Data Types - double"
+      },
+      {
+        "name": "threshoutX",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "numeric",
+            "scalar"
+          ],
+          [
+            "struct"
+          ]
+        ],
+        "purpose_short": "threshold to bound the effect of high leverage units",
+        "default": null,
+        "purpose_long": "threshold to bound the effect of high leverage units. Empty value (default) or scalar equal to 1 or structure. If the design matrix X contains several high leverage units (that is units which are very far from the bulk of the data), it may happen that the best subset of LXS may include some of these units, or it may happen that these units have a deletion residual which is very small due to their extremely high value of $h_i$. bonflevoutX=1 imposes the constraints that: 1) the extracted subsets which contain at least one unit declared as outlier in the X space by FSM using a Bonferronized confidence level of 0.99 are removed from the list of candidate subsets to find the LXS solution. 2) imposes the constraint that $h_i(m^*)$ cannot exceed $10 \\times p/m$. If threshoutX is a structure, it contains the following"
+      },
+      {
+        "name": "weak",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Indicator to use a different decision rule to detect the signal and flag outliers",
+        "default": null,
+        "purpose_long": "Indicator to use a different decision rule to detect the signal and flag outliers. false (default) | true. If weak=false default FSRcore values are used, if weak=true 'stronger' quantiles are used as a decision rule to trim outliers and VIOM outliers are the ones entering the Search after the first signal. Example - 'weak',true Data Types - logical"
+      },
+      {
+        "name": "plots",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "numeric",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Plot on the screen",
+        "default": null,
+        "purpose_long": "Plot on the screen. Scalar. If plots=1 (default) the plot of minimum deletion residual with envelopes based on n observations and the yXplot matrix with the outliers highlighted is produced. If plots=2 the user can also monitor the intermediate plots based on envelope superimposition. Else no plot is produced. Example - 'plots',1 Data Types - double"
+      },
+      {
+        "name": "bivarfit",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "char",
+            "choices={'','1','2','0','i1','i2','i3'}"
+          ]
+        ],
+        "purpose_short": null,
+        "default": null,
+        "purpose_long": "Superimpose bivariate least square lines. Character. This option adds one or more least squares lines, based on SIMPLE REGRESSION of y on Xi, to the plots of y|Xi. bivarfit = '' is the default: no line is fitted. bivarfit = '1' fits a single ols line to all points of each bivariate plot in the scatter matrix y|X. bivarfit = '2' fits two ols lines: one to all points and another to the group of the genuine observations. The group of the potential outliers is not fitted. bivarfit = '0' fits one ols line to each group. This is useful for the purpose of fitting mixtures of regression lines. bivarfit = 'i1' or 'i2' or 'i3' etc. fits an ols line to a specific group, the one with index 'i' equal to 1, 2, 3 etc. Again, useful in case of mixtures. Example - 'bivarfit','2' Data Types - char"
+      },
+      {
+        "name": "labeladd",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "char",
+            "choices={'','1'}"
+          ]
+        ],
+        "purpose_short": null,
+        "default": null,
+        "purpose_long": "Add outlier labels in plot. Character. If this option is '1', we label the outliers with the unit row index in matrices X and y. The default value is labeladd='', i.e. no label is added. Example - 'labeladd','1' Data Types - char"
+      },
+      {
+        "name": "multivarfit",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "char",
+            "choices={'','1','2'}"
+          ]
+        ],
+        "purpose_short": null,
+        "default": null,
+        "purpose_long": "Superimpose multivariate least square lines. Character. This option adds one or more least square lines, based on MULTIVARIATE REGRESSION of y on X, to the plots of y|Xi. multivarfit = '' is the default: no line is fitted. multivarfit = '1' fits a single ols line to all points of each bivariate plot in the scatter matrix y|X. The line added to the scatter plot y|Xi is avconst + Ci*Xi, where Ci is the coefficient of Xi in the multivariate regression and avconst is the effect of all the other explanatory variables different from Xi evaluated at their centroid (that is overline{y}'C)) multivarfit = '2' equal to multivarfit ='1' but this time we also add the line based on the group of unselected observations (i.e. the normal units). Example - 'multivarfit','1' Data Types - char"
+      },
+      {
+        "name": "nameX",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "cellstr"
+          ]
+        ],
+        "purpose_short": null,
+        "default": null,
+        "purpose_long": "Add variable labels in plot. Cell array of strings. Cell array of strings of length p containing the labels of the variables of the regression dataset. If it is empty (default) the sequence X1, ..., Xp will be created automatically Example - 'nameX',{'NameVar1','NameVar2'} Data Types - cell"
+      },
+      {
+        "name": "namey",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "char"
+          ]
+        ],
+        "purpose_short": null,
+        "default": null,
+        "purpose_long": "Add response label. Character. String containing the label of the response Example - 'namey','NameOfResponse' Data Types - char"
+      },
+      {
+        "name": "tag",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "char"
+          ],
+          [
+            "cellstr"
+          ]
+        ],
+        "purpose_short": "tags to the plots which are created",
+        "default": null,
+        "purpose_long": "tags to the plots which are created. character or cell array of characters. This option enables to add a tag to the plots which are created. The default tag names are: fsr_mdrplot for the plot of mdr based on all the observations; fsr_yXplot for the plot of y against each column of X with the outliers highlighted; fsr_resuperplot for the plot of resuperimposed envelopes. The first plot with 4 panel of resuperimposed envelopes has tag fsr_resuperplot1, the second fsr_resuperplot2 ... If tag is character or a cell of characters of length 1, it is possible to specify the tag for the plot of mdr based on all the observations; If tag is a cell of length 2 it is possible to control both the tag for the plot of mdr based on all the observations and the tag for the yXplot with outliers highlighted. If tag is a cell of length 3 the third element specifies the names of the plots of resuperimposed envelopes. Example - 'tag',{'plmdr' 'plyXplot'}; Data Types - char or cell"
+      },
+      {
+        "name": "xlim",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "numeric",
+            "vector",
+            "numel=2"
+          ]
+        ],
+        "purpose_short": "Control x scale in plot",
+        "default": null,
+        "purpose_long": "Control x scale in plot. Vector. Vector with two elements minimum and maximum on the x axis. Default value is '' (automatic scale) Example - 'xlim',[0,10] sets the minimum value to 0 and the max to 10 on the x axis Data Types - double"
+      },
+      {
+        "name": "ylim",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "numeric",
+            "vector",
+            "numel=2"
+          ]
+        ],
+        "purpose_short": "Control y scale in plot",
+        "default": null,
+        "purpose_long": "Control y scale in plot. Vector. Vector with two elements controlling minimum and maximum on the y axis. Default value is '' (automatic scale) Example - 'ylim',[0,10] sets the minimum value to 0 and the max to 10 on the y axis Data Types - double"
+      }
+    ],
+    "outputs": [],
+    "see_also": [
+      "FSReda",
+      "LXS.m"
+    ],
+    "references": [
+      "Riani, M., Atkinson, A.C. and Cerioli, A. (2009), Finding an unknown number of multivariate outliers, \"Journal of the Royal Statistical Society Series B\", Vol. 71, pp. 201-221."
+    ],
+    "fsda_url": "https://rosa.unipr.it/FSDA/FSR.html"
+  },
+  {
+    "name": "mcd",
+    "category": "MULT-Multivariate",
+    "description_short": "Computes Minimum Covariance Determinant",
+    "description_long": "",
+    "inputs": [
+      {
+        "name": "Y",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "numeric",
+            "2d"
+          ]
+        ],
+        "purpose_short": null,
+        "default": null,
+        "purpose_long": "Data matrix containing n observations on v variables. Rows of Y represent observations, and columns represent variables. Missing values (NaN's) and infinite values (Inf's) are allowed, since observations (rows) with missing or infinite values will be excluded from the computations."
+      },
+      {
+        "name": "bdp",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "bdp",
+        "default": null,
+        "purpose_long": "Breakdown point. Scalar. (Number between 0 and 0.5). The default value is 0.5. Example - 'bdp',1/4 Data Types - double"
+      },
+      {
+        "name": "bestr",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "bestr",
+        "default": null,
+        "purpose_long": "Number of best solutions to store. Scalar. Number of \"best locations\" to remember from the subsamples. These will be later iterated until convergence (default=5) Example - 'bestr',10 Data Types - double"
+      },
+      {
+        "name": "betathresh",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "betathresh",
+        "default": null,
+        "purpose_long": "Distribution to use. Boolean. If betathresh = true the distribution which is used to declare units as outliers is a mixture of Rocke scaled F distribution and Beta else (default) traditional chi^2 distribution is used. Example - 'betathresh',false Data Types - logical"
+      },
+      {
+        "name": "conflev",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "conflev",
+        "default": null,
+        "purpose_long": "Confidence level. Scalar. Number between 0 and 1 containing confidence level which is used to declare units as outliers after reweighting. Usually conflev=0.95, 0.975 0.99 (individual alpha) or 1-0.05/n, 1-0.025/n, 1-0.01/n (simultaneous alpha). Default value is 0.975 Example - 'conflev',0.99 Data Types - double"
+      },
+      {
+        "name": "conflevrew",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "conflevrew",
+        "default": null,
+        "purpose_long": "Confidence level for use for reweighting. Scalar. Number between 0 and 1 containing confidence level which is used to do the reweighting step. Default value is the one specified in previous option conflev. Example - 'conflevrew',0.99 Data Types - double"
+      },
+      {
+        "name": "msg",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "msg",
+        "default": null,
+        "purpose_long": "Display or not messages on the screen. Scalar. If msg==1 (default) messages are displayed on the screen about estimated time to compute the final estimator else no message is displayed on the screen. Example - 'msg',1 Data Types - double"
+      },
+      {
+        "name": "nocheck",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "nocheck",
+        "default": null,
+        "purpose_long": "No check on input data. Scalar. If nocheck is equal to 1 no check is performed on matrix Y. As default nocheck=0. Example - 'nocheck',1 Data Types - double"
+      },
+      {
+        "name": "nsamp",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "nsamp",
+        "default": null,
+        "purpose_long": "Number of subsamples. Scalar or matrix. If nsamp is a scalar, it contains the number of subsamples of size v+1 which have to be extracted (if not given, default is nsamp=1000). If nsamp=0 all subsets will be extracted. If nsamp is a matrix it contains in the rows the indexes of the subsets which have to be extracted. nsamp in this case can be conveniently generated by function subsets. Example - 'nsamp',10000 Data Types - double"
+      },
+      {
+        "name": "refsteps",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "refsteps",
+        "default": null,
+        "purpose_long": "Number of refining iterations. Scalar. Number of refining iterations in each subsample (default = 3). refsteps = 0 means \"raw-subsampling\" without iterations. Example - 'refsteps',10 Data Types - double"
+      },
+      {
+        "name": "refstepsbestr",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "refstepsbestr",
+        "default": null,
+        "purpose_long": "Number of refining iterations. Scalar. Number of refining iterations for each best subset (default = 50). Example - 'refstepsbestr',10 Data Types - double"
+      },
+      {
+        "name": "reftol",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "reftol",
+        "default": null,
+        "purpose_long": "Refining steps tolerance. Scalar. Tolerance for the refining steps. The default value is 1e-6; Example - 'reftol',1e-8 Data Types - double"
+      },
+      {
+        "name": "reftolbestr",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "reftolbestr",
+        "default": null,
+        "purpose_long": "Tolerance for refining steps. Scalar. Value of tolerance for the refining steps for each of the best subsets. The default value is 1e-8; Example - 'reftolbestr',1e-8 Data Types - double"
+      },
+      {
+        "name": "restrfactor",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "restrfactor",
+        "default": null,
+        "purpose_long": "Restriction factor. Scalar. Positive scalar greater or equal than 1 which constrains the allowed differences of the eigenvalues of the scatter matrix in each concentration step. The default value of restrfactor is Inf, that is no constraint is imposed on the eigenvalues of the covariace matrix in each subset. Example - 'restrfactor',100 Data Types - double"
+      },
+      {
+        "name": "smallsamplecor",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "smallsamplecor",
+        "default": null,
+        "purpose_long": "small sample correction factor. Boolean. Boolean which defines whether to use or not small sample correction factor to inflate the scale estimate. If it is equal to true the small sample correction factor is used. The default value of smallsamplecor is true, that is the correction is used. Example - 'smallsamplecor',true Data Types - logical"
+      },
+      {
+        "name": "tolMCD",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "tolMCD",
+        "default": null,
+        "purpose_long": "Tolerance to declare a subset as singular. Scalar. The default value of tolMCD is exp(-50*v). Example - 'tolMCD',1e-20 Data Types - double"
+      },
+      {
+        "name": "ysaveRAW",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "ysaveRAW",
+        "default": null,
+        "purpose_long": "save Y. boolean. Boolean that is set to true to request that the data matrix Y is saved into the output structure RAW. This feature is meant at simplifying the use of function malindexplot. Default is false, i.e. no saving is done. Example - 'ysaveRAW',true Data Types - logical"
+      },
+      {
+        "name": "ysaveREW",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "ysaveREW",
+        "default": null,
+        "purpose_long": "save Y. Boolean. Boolean that is set to true to request that the data matrix Y is saved into the output structure REW. This feature is meant at simplifying the use of function malindexplot. Default is false, i.e. no saving is done. Example - 'ysaveREW',true Data Types - logical"
+      },
+      {
+        "name": "plots",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "plots",
+        "default": null,
+        "purpose_long": "Plot on the screen. Scalar or structure. If plots is a structure or scalar equal to 1, generates: (1) two plots of Mahalanobis distances (raw and reweighted) against index number. The confidence level used to draw the confidence bands for the MD is given by the input option conflev. If conflev is not specified a nominal 0.975 confidence interval will be used. (2) two scatter plot matrices with the outliers (from raw and reweighted mcd estimators) highlighted. If plots is a structure it may contain the following fields plots.labeladd = if this option is '1', the outliers in the spm are labelled with their unit row index. The default value is labeladd='', i.e. no label is added. plots.nameY = cell array of strings containing the labels of the variables. As default value, the labels which are added are Y1, ...Yv. Example - 'plots',1 Data Types - double or structure"
+      },
+      {
+        "name": "modelT",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "struct"
+          ]
+        ],
+        "purpose_short": "modelT",
+        "default": null,
+        "purpose_long": "controls how the consistency factor is applied to account for the effect of trimming. Scalar. It is empty for the classic case when uncontaminated data are assumed to come from a normal distribution (default). If on the other hand the data are heavy-tailed and can be modelled by a Student-t distribution, modelT takes a positive value representing the degrees of freedom of the t-distribution; if modelT is zero, then the degrees of freedom are estimated from the data (to be implemented). Example - 'modelT',5 Data Types - double"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "RAW",
+        "matlab_type": [
+          [
+            "struct"
+          ]
+        ],
+        "short_desc": "structure which contains the following fields",
+        "long_desc": "structure which contains the following fields",
+        "fields": [
+          {
+            "name": "h",
+            "desc": "scalar. The number of observations that have determined the MCD estimator"
+          },
+          {
+            "name": "loc",
+            "desc": "1 x v vector containing raw MCD location of the data"
+          },
+          {
+            "name": "cov",
+            "desc": "robust MCD estimate of covariance matrix. It is the raw MCD covariance matrix (multiplied by a finite sample correction factor and an asymptotic consistency factor)."
+          },
+          {
+            "name": "cor",
+            "desc": "The raw MCD correlation matrix"
+          },
+          {
+            "name": "obj",
+            "desc": "The determinant of the raw MCD covariance matrix."
+          },
+          {
+            "name": "bs",
+            "desc": "(v+1) x 1 vector containing the units forming best subset associated with MCD estimate of location."
+          },
+          {
+            "name": "md",
+            "desc": "n x 1 vector containing the estimates of the robust Mahalanobis distances (in squared units). This vector contains the distances of each observation from the raw MCD location of the data, relative to the raw MCD scatter matrix RAW.cov"
+          },
+          {
+            "name": "outliers",
+            "desc": "A vector containing the list of the units declared as outliers using confidence level specified in input scalar conflev"
+          },
+          {
+            "name": "conflev",
+            "desc": "Confidence level that was used to declare outliers"
+          },
+          {
+            "name": "singsub",
+            "desc": "Number of subsets without full rank. Notice that out.singsub > 0.1*(number of subsamples) produces a warning"
+          },
+          {
+            "name": "weights",
+            "desc": "n x 1 vector containing the estimates of the weights. Weights assume values 0 or 1. Weight is 1 if the associated observation has been used to compute centroid and covariance matrix. These weights determine which observations are used to compute the final MCD estimates. Unless there is a perfect fit sum(RAW.weights)=h"
+          },
+          {
+            "name": "plane",
+            "desc": "In case of an exact fit, RAW.plane contains the coefficients of a (hyper)plane a_1(x_i1-m_1)+...+a_p(x_ip-m_p)=0 containing at least h observations, where (m_1,...,m_p) is the MCD location of these observations. This field is present only if there is exact fit."
+          },
+          {
+            "name": "Y",
+            "desc": "Data matrix Y. This field is present only if option ysaveRAW was set to 1."
+          },
+          {
+            "name": "class",
+            "desc": "'mcd'"
+          }
+        ]
+      },
+      {
+        "name": "REW",
+        "matlab_type": [
+          [
+            "struct"
+          ]
+        ],
+        "short_desc": "structure which contains the following fields:",
+        "long_desc": "structure which contains the following fields:",
+        "fields": [
+          {
+            "name": "loc",
+            "desc": "The robust location of the data, obtained after reweighting, if the raw MCD is not singular. Otherwise the raw MCD center is given here."
+          },
+          {
+            "name": "cov",
+            "desc": "The robust covariance matrix, obtained after reweighting and multiplying with a finite sample correction factor and an asymptotic consistency factor, if the raw MCD is not singular. Otherwise the raw MCD covariance matrix is given here."
+          },
+          {
+            "name": "cor",
+            "desc": "The robust correlation matrix, obtained after reweighting"
+          },
+          {
+            "name": "md",
+            "desc": "n x 1 vector containing the estimates of the robust Mahalanobis distances (in squared units). This vector contains the distances of each observation from the reweighted MCD location of the data, relative to the reweighted MCD scatter of the data These distances allow us to easily identify the outliers. If the reweighted MCD is singular, RAW.md is given here."
+          },
+          {
+            "name": "outliers",
+            "desc": "A vector containing the list of the units declared as outliers after reweighting."
+          },
+          {
+            "name": "weights",
+            "desc": "n x 1 vector containing the estimates of the weights. Weights assume values 0 or 1. Weight is 0 if the associated observation has been declared outlier. These weights determine which observations are used to compute the final MCD estimates. Remark: if the reweighted MCD is singular, RAW.weights is given here."
+          },
+          {
+            "name": "method",
+            "desc": "In case of an exact fit, REW.method contains a character string containing information about the method and about singular subsamples (if any). This field is present only if there is exact fit."
+          },
+          {
+            "name": "plane",
+            "desc": "In case of an exact fit, REW.plane contains the coefficients of a (hyper)plane a_1(x_i1-m_1)+...+a_p(x_ip-m_p)=0 containing at least h observations, where (m_1,...,m_p). This field is present only if there is exact fit."
+          },
+          {
+            "name": "Y",
+            "desc": "Data matrix Y. The field is present only if option ysaveREW was set to 1."
+          },
+          {
+            "name": "class",
+            "desc": "'mcdr'."
+          }
+        ]
+      },
+      {
+        "name": "C",
+        "matlab_type": null,
+        "short_desc": "matrix of size nsamp-by-v which contains the indices of the subsamples extracted for computing the estimate.",
+        "long_desc": "matrix of size nsamp-by-v which contains the indices of the subsamples extracted for computing the estimate.",
+        "fields": []
+      }
+    ],
+    "see_also": [
+      "mve.m"
+    ],
+    "references": [
+      "Rousseeuw, P.J. and Van Driessen, K. 1999. A fast algorithm for the minimum covariance determinant estimator. Technometrics, 41:212?223.",
+      "Maronna, R.A., Martin D. and Yohai V.J. (2006), \"Robust Statistics, Theory and Methods\", Wiley, New York.",
+      "Acknowledgements:",
+      "This function follows the lines of MATLAB/R code developed during the years by many authors. In particular, parts of the code rely on the LIBRA mcd implementation of Hubert and Verboven. For more details, see: https://wis.kuleuven.be/stat/robust/papers/2005/LIBRA.pdf and the R library Robustbase http://robustbase.r-forge.r-project.org/ The core of our routines, e.g. the resampling approach, however, has been completely redesigned, with considerable increase of the computational performance. Note that, for the moment, FSDA does not adopt the 'divide and conquer' partitioning method proposed by Rousseeuw and Van Driessen to speed up computations for large datasets. This partitioning method is applied in the R and LIBRA implementations of the mcd."
+    ],
+    "fsda_url": "https://rosa.unipr.it/FSDA/mcd.html"
+  },
+  {
+    "name": "pcaFS",
+    "category": "MULT-Multivariate",
+    "description_short": "pcaFS performs Principal Component Analysis (PCA) on raw data",
+    "description_long": "The main differences with respect to MATLAB function pca are: 1) accepts an input X also as table; 2) produces in table format the percentage of the variance explained single and cumulative of the various components and the associated Pareto plot, in order to decide about the number of components to retain. 3) returns the loadings in table format and shows them graphically. 4) provides guidelines about the automatic choice of the number of components; 5) returns the communalities for each variable with respect to the first k principal components in table format; 6) returns the orthogonal distance ($OD_i$) of each observation to the PCA subspace. For example, if the subspace is defined by the first two principal components, $OD_i$ is computed as: \\[ OD_i=|| z_i- V_{(2)} V_{(2)}' z_i || \\] where $z_i$ is the i-th row of the original centered (standardized) data matrix $Z$ of dimension $n \\times p$ and $V_{(2)}=(v_1 v_2)$ is the matrix of size $p \\times 2$ containing the first two eigenvectors of $Z'Z/(n-1)$. The observations with large $OD_i$ are not well represented in the space of the principal components. 7) returns the score distance $SD_i$ of each observation. For example, if the subspace is defined by the first two principal components, $SD_i$ is computed as: \\[ SD_i=\\sqrt{(z_i'v_1)^2/l_1+ (z_i'v_2)^2/l_2 } \\] where $l_1$ and $l_2$ are the first two eigenvalues of $Z'Z/(n-1)$. 8) calls app biplotFS which enables to obtain an interactive biplot in which points, row labels or arrows can be shown or hidden. This app also gives the possibility of controlling the length of the arrows and the position of the row points through two interactive slider bars. In the app it is also possible to color row points depending on the orthogonal distance ($OD_i$) of each observation to the PCA subspace. If optional input argument bsb or bdp is specified, it is possible to have in the app two tabs which enable the user to select the breakdown point of the analysis or the subset size to use in the svd. The units which are declared as outliers or the units outside the subset are shown in the biplot with filled circles. 9) enables to deal with geographical information (latitude and longitude) or Shape polygons of the units.",
+    "inputs": [
+      {
+        "name": "Y",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ],
+          [
+            "table"
+          ]
+        ],
+        "purpose_short": "Input data",
+        "default": null,
+        "purpose_long": "Input data. 2D array or table. n x p data matrix; n observations and p variables. Rows of Y represent observations, and columns represent variables. Missing values (NaN's) and infinite values (Inf's) are allowed, since observations (rows) with missing or infinite values will automatically be excluded from the computations. Data Types - single|double"
+      },
+      {
+        "name": "biplot",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "numeric",
+            "scalar",
+            "choices={0,1}"
+          ]
+        ],
+        "purpose_short": "Launch app biplotFS",
+        "default": null,
+        "purpose_long": "launch app biplotFS. Scalar. If biplot is 1 (default) app biplotFS is automatically launched. With this app it is possible to show in a dynamic way the rows points (PC coordinates), the arrows, the row labels and control with a scrolling bar the length of the arrows and the spread of row points. Example - 'biplot',0 Data Types - double"
+      },
+      {
+        "name": "dispresults",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Show the results in the command window",
+        "default": null,
+        "purpose_long": "show the results in the command window. Boolean. If dispresults is true, the percentage of variance explained together with the loadings, the criteria for deciding the number of components to retain and the 5 units with the largest score and orthogonal distance (combined) are shown in the command window. Example - 'dispresults',false Data Types - char"
+      },
+      {
+        "name": "Latitude",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "numeric",
+            "vector"
+          ]
+        ],
+        "purpose_short": "Latitude coordinates in degrees of the rows",
+        "default": null,
+        "purpose_long": "Latitude coordinates in degrees of the rows. nx1 vector containing the numerical values of latitudes for each row. If vectors Latitude and Longitude are present once brushing of the units in biplotAPP is done, the geobubble of the brushed units automatically appears. The size of the bubble is proportional to the value of the first principal component while the color of the bubbles depends on the value of the second principal component. Example - 'Latitude',[54 43.2 ... 47] Data Types - vector with elements in the range [–90, 90]"
+      },
+      {
+        "name": "Longitude",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "numeric",
+            "vector"
+          ]
+        ],
+        "purpose_short": "Longitude coordinates in degrees of the rows",
+        "default": null,
+        "purpose_long": "Longitude coordinates in degrees of the rows. nx1 vector containint the numerical values of latitudes for each row. If vectors Latitude and Longitude are present once brushing of the units in biplotAPP is done, the geobubble of the brushed units automatically appears. The size of the bubble is proportional to the value of the first principal component while the color of the bubbles depends on the value of the second principal component. Example - 'Longitude',[54 43.2 ... 47] Data Types - vector with elements in the range [–90, 90]"
+      },
+      {
+        "name": "NumComponents",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "numeric",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Number of Principal Components to retain",
+        "default": null,
+        "purpose_long": "the number of components desired. Specified as a scalar integer $k$ satisfying $0 < k \\leq p$. When specified, pcaFS returns the first $k$ columns of out.coeff and out.score. If NumComponents is not specified pcaFS returns the minimum number of components which cumulatively enable to explain a percentage of variance which is equal at least to $0.95^p$. If this threshold is exceeded already by the first PC, pcaFS still returns the first two PCs. Example - 'NumComponents',2 Data Types - single|double"
+      },
+      {
+        "name": "plots",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "string"
+          ],
+          [
+            "char",
+            "choices={'Explained', 'Loadings', 'OutlierMap'}"
+          ],
+          [
+            "cell"
+          ],
+          [
+            "double",
+            "scalar"
+          ],
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Control the graphical output",
+        "default": null,
+        "purpose_long": "Control the graphical output. Scalar, string, string array, character array or cell array of character vectors. If plots is 1 or true (default), the following plots are displayed: - Pareto plot of the explained variance; - Loading plot for the first two principal components; - Outlier Map. If plots is 0 or false, no plots are produced. If plots is a string array or a cell array of character vectors, it specifies which plots to display. Valid plot identifiers are: \"Explained\" = Pareto plot of the explained variance; \"Loadings\" = Loading plot; \"OutlierMap\" = Outlier Map. For example, to display both the Pareto plot of the explained variance and the loading plot, use: plots = {'Explained','Loadings'} or: plots = [\"Explained\",\"Loadings\"] Example - 'plots', 0 Data Types - double | logical | char | cell | string"
+      },
+      {
+        "name": "robust",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ],
+          [
+            "struct"
+          ]
+        ],
+        "purpose_short": "Robust principal components",
+        "default": null,
+        "purpose_long": "robust principal components. boolean or struct. If robust is a scalar boolean equal to true (default), FS is applied and using a Bonferronized confidence level units are declared as outliers. If robust is a struct it is possible to choose between FS or MCD and the structure may contain the following fields: robust.bsb = units forming subset on which to compute the svd. bsb can be either a numeric vector of length m (m<=n) containing the list of the units (e.g. 1:50) or a logical vector of length n containing the true for the units which have to be used in the calculation of svd. For example bsb=true(n,1), bsb(13)=false; excludes from the svd unit number 13. The other units are projected into this robust space. Note that is robust.bsb is supplied all the other options are ignored. robust.conflev = scalar in the interval (0 1) which contains the confidence level to declare the units as outliers. if robust.conflev is not specified or if it is missing a 0.99 Bonferronized confidence level is used. robust.class = class can be either 'FS' (default) or 'MCD' or 'MM' in order to choose between Forward search, or minimum covariance determinant or MM estimators. robust.bdp= break down point to use in the 'FS' or 'MCD' estimator or in the preliminary S estimator which is used to compute the MM. The default is bdp=0.4; It measures the fraction of outliers the algorithm should resist. In this case any value greater than 0 but smaller or equal than 0.5 will do fine. robust.eff = nominal efficiency to use for the MM estimator (note that this field is used just if robust.class is 'MM') Example - 'bsb',[2 10:90 93] Data Types - double or logical"
+      },
+      {
+        "name": "ShapeFile",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "char"
+          ],
+          [
+            "string"
+          ],
+          [
+            "table"
+          ]
+        ],
+        "purpose_short": "name of ShapeFile or geospatial table containing shapes",
+        "default": null,
+        "purpose_long": "name of ShapeFile or geospatial table containing shapes. Character or string or geotable. Name of the ShapeFile containing the containing the geometric details of the rows. The ShapeFile, which is loaded using function readgeotable, must have n rows and the n rows must have the same order of the n rows of Y. The default value of ShapeFile is empty that is we assume that no shape file is given. If ShapeFile is given an additional GUI containing the areas colored using the first PC is shown. If this file is given in the biplot once a particular area is selected the map showing the shape of the associated points is shown automatically on the screen (for more information see the release notes of FSDA 2025b). Example - 'ShapeFile','shapefileName' Data Types - char or string or geotable Remark: note that this option can be used just is the \"Mapping toolbox\" is installed."
+      },
+      {
+        "name": "smartEVchart",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Eigenvectors shown as ordered-bar and line plot",
+        "default": null,
+        "purpose_long": "Eigenvectors shown as ordered-bar and line plots. Boolean. This plot facilitates the interpretation of the components. If smartEVchart is true (default is false), a new plot is shown for each component. In the upper panel, we show the bars associated with the eigenvector elements, sorted by magnitude. Bars are displayed in blue or red depending on their sign. In the bottom panel, we show the coefficients arranged along a line. The vertical labels have a magnitude proportional to the importance of the corresponding coefficient. Finally, the caption of the plot displays the equation of the corresponding component as a linear combination of the original (scaled) variables. Example - 'smartEVchart',true Data Types - boolean"
+      },
+      {
+        "name": "standardize",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Standardize data",
+        "default": null,
+        "purpose_long": "standardize data. boolean. Boolean which specifies whether to standardize the variables, that is we operate on the correlation matrix (default) or simply remove column means (in this last case we operate on the covariance matrix). Example - 'standardize',false Data Types - boolean"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "out",
+        "matlab_type": [
+          [
+            "struct"
+          ]
+        ],
+        "short_desc": "structure which contains the following fields",
+        "long_desc": "structure which contains the following fields",
+        "fields": [
+          {
+            "name": "Rtable",
+            "desc": "p-by-p correlation matrix in table format."
+          },
+          {
+            "name": "class",
+            "desc": "character vector containing pcaFS."
+          },
+          {
+            "name": "explained",
+            "desc": "p \\times 3 matrix containing respectively 1st col = eigenvalues; 2nd col = Explained Variance (in percentage) 3rd col = Cumulative Explained Variance (in percentage)"
+          },
+          {
+            "name": "explainedT",
+            "desc": "the same as out.explained but in table format."
+          },
+          {
+            "name": "coeff",
+            "desc": "p-by-NumComponents matrix containing the ordered eigenvectors of the correlation (covariance matrix) in table format. First column is referred to first eigenvector ... Note that out.coeff'*out.coeff= I_NumComponents."
+          },
+          {
+            "name": "coeffT",
+            "desc": "the same as out.coeff but in table format."
+          },
+          {
+            "name": "loadings",
+            "desc": "p-by-NumComponents matrix containing the correlation coefficients between the original variables and the first NumComponents principal components."
+          },
+          {
+            "name": "loadingsT",
+            "desc": "the same as out.loadings but in table format."
+          },
+          {
+            "name": "score",
+            "desc": "the principal component scores. The rows of out.score correspond to observations, columns to components. The covariance matrix of out.score is $\\Lambda$ (the diagonal matrix containing the eigenvalues of the correlation (covariance matrix)."
+          },
+          {
+            "name": "scoreT",
+            "desc": "the same as outscore but in table format."
+          },
+          {
+            "name": "communalities",
+            "desc": "matrix with p-by-2*NumComponents-1 columns. The first NumComponents columns contain the communalities (variance extracted) by the the first NumComponents principal components. Column NumComponents+1 contains the communalities extracted by the first two principal components. Column NumComponents+2 contains the communalities extracted by the first three principal components..."
+          },
+          {
+            "name": "communalitiesT",
+            "desc": "the same as out.communalities but in table format."
+          },
+          {
+            "name": "orthDist",
+            "desc": "orthogonal distance from PCA subspace. Column vector of length n containing the orthogonal distance of each observation from the PCA subspace."
+          },
+          {
+            "name": "scoreDist",
+            "desc": "score distance from centroid. Column vector of length n containing the score distance of each observation from the PCA subspace. The analysis of out.orthDist and out.scoreDist reveals the good leverage points, the orthogonal outliers and the bad leverage points. Good leverage points: points which lie close to the PCA space but far from the regular observations. Good leverage points have a large score distance and low orthogonal distance. Orthogonal outliers are points which have a large orthogonal distance to the PCA subspace but cannot be seen when we look only at their projection on the PCA subspace. Bad leverage points are points which have a large orthogonal distance and whose projection on the PCA subspace is remote from the typical projections. These points have a large score distance and a large orthogonal distance."
+          }
+        ]
+      }
+    ],
+    "see_also": [
+      "pca",
+      "biplotFS"
+    ],
+    "references": [],
+    "fsda_url": "https://rosa.unipr.it/FSDA/pcaFS.html"
+  },
+  {
+    "name": "corrNominal",
+    "category": "MULT-Categorical",
+    "description_short": "corrNominal measures strength of association between two unordered (nominal) categorical variables",
+    "description_long": "corrNominal computes $\\chi2$, $\\Phi$, Cramer's $V$, Goodman-Kruskal's $\\lambda_{y|x}$, Goodman-Kruskal's $\\tau_{y|x}$, and Theil's $H_{y|x}$ (uncertainty coefficient). All these indexes measure the association among two unordered qualitative variables. If the input table is 2-by-2 indexes theta (cross product ratio), Q=(theta-1)/(theta+1) and U=Q=(sqrt(theta)-1)/(sqrt(theta)+1) are also computed. Additional details about these indexes can be found in the \"More About\" section or in the \"Output section\" of this document.",
+    "inputs": [
+      {
+        "name": "N",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "single",
+            "2d"
+          ],
+          [
+            "double",
+            "2d"
+          ],
+          [
+            "table"
+          ]
+        ],
+        "purpose_short": "Contingency table (default) or n-by-2 input dataset",
+        "default": null,
+        "purpose_long": "Contingency table (default) or n-by-2 input dataset. Matrix or Table. Matrix or table that contains the input contingency table (say of size I-by-J) or the original data matrix. In this last case, N=crosstab(N(:,1),N(:,2)), as default procedure assumes that the input is a contingency table. If N is a data matrix (supplied as a n-by-2 cell array of strings, or n-by-2 array or n-by-2 table), optional input datamatrix must be set to true."
+      },
+      {
+        "name": "conflev",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Confidence level to be used to compute confidence intervals",
+        "default": null,
+        "purpose_long": "Confidence levels to be used to compute confidence intervals. Scalar. The default value of conflev is 0.95, that is 95 per cent confidence intervals are computed for all the indexes (note that this option is ignored if NoStandardErrors=true). Example - 'conflev',0.99 Data Types - double"
+      },
+      {
+        "name": "conflimMethodCramerV",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "char",
+            "choices={'ncchisq', 'ncchisqadj', 'fisher', 'fisheradj'}"
+          ]
+        ],
+        "purpose_short": "Method to compute confidence inteval for Cramer's V",
+        "default": null,
+        "purpose_long": "method to compute confidence interval for CramerV. Character. Character that identifies the method to use to compute the confidence interval for Cramer index. Default value is 'ncchisq'. Possible values are 'ncchisq', 'ncchisqadj', 'fisher' or 'fisheradj'; 'ncchisq' uses the non central chi2. 'ncchisq' uses the non central chi2 adjusted for the degrees of freedom. 'fisher' uses the Fisher z-transformation and 'fisheradj' uses the fisher z-transformation and bias correction. Example - 'conflimMethodCramerV','fisheradj' Data Types - character"
+      },
+      {
+        "name": "dispresults",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Display results on screen",
+        "default": null,
+        "purpose_long": "displays results on the screen. Boolean. If dispresults is true (default), it is possible to see on the screen all the summary results of the analysis. Example - 'dispresults',false Data Types - Boolean"
+      },
+      {
+        "name": "Lr",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "cell:Lr"
+          ]
+        ],
+        "purpose_short": "Vector of row labels",
+        "default": null,
+        "purpose_long": "Vector of row labels. Cell. Cell containing the labels of the rows of the input contingency matrix N. This option is unnecessary if N is a table, because in this case Lr=N.Properties.RowNames; Example - 'Lr',{'a' 'b' 'c'} Data Types - cell array of strings"
+      },
+      {
+        "name": "Lc",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "cell:Lc"
+          ]
+        ],
+        "purpose_short": "Vector of column labels",
+        "default": null,
+        "purpose_long": "Vector of column labels. Cell. Cell containing the labels of the columns of the input contingency matrix N. This option is unnecessary if N is a table, because in this case Lc=N.Properties.VariableNames; Example - 'Lc',{'c1' c2' 'c3' 'c4'} Data Types - cell array of strings"
+      },
+      {
+        "name": "datamatrix",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Data matrix or contingency table",
+        "default": null,
+        "purpose_long": "Data matrix or contingency table. Boolean. If datamatrix is true, the first input argument N is forced to be interpreted as a data matrix; else, if the input argument is false, N is treated as a contingency table. The default value of datamatrix is false, that is the procedure automatically considers N as a contingency table. In case datamatrix is true, N can be a cell of size n-by-2 containing the two grouping variables or a numeric array of size n-by-2 or a table of size n-by-2. Example - 'datamatrix',true Data Types - logical"
+      },
+      {
+        "name": "NoStandardErrors",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Just indexes without standard errors and p-values",
+        "default": null,
+        "purpose_long": "Just indexes without standard errors and p-values. Boolean. If NoStandardErrors is true, just the indexes are computed without standard errors and p-values. That is, no inferential measure is given. The default value of NoStandardErrors is false. Example - 'NoStandardErrors',true Data Types - Boolean"
+      },
+      {
+        "name": "plots",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical",
+            "scalar"
+          ]
+        ],
+        "purpose_short": "Display balloonplot and pareto plot of squared Pearson residuals",
+        "default": null,
+        "purpose_long": "balloonplot of squared Pearson residuals and Pareto plot of squared Pearson residuals. Boolean. If plots is true, the following two plots of Pearson squared residuals are shown on the screen. 1) a bubble plot (ballonplot); 2) a Pareto plot. In both plots entries of the contingency table associated with positive association (positive residuals) are shown in blue, while those associated with negative association (negative residuals) are shown in red. The default value of plots is false. Example - 'plots',true Data Types - Boolean"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "out",
+        "matlab_type": [
+          [
+            "struct"
+          ]
+        ],
+        "short_desc": "structure that contains the following fields:",
+        "long_desc": "structure that contains the following fields:",
+        "fields": [
+          {
+            "name": "N",
+            "desc": "$I$-by-$J$-array containing contingency table referred to active rows (i.e. referred to the rows that participated to the fit). The $(i,j)$-th element is equal to $n_{ij}$, $i=1, 2, \\ldots, I$ and $j=1, 2, \\ldots, J$. The sum of the elements of out.N is $n$ (the grand total)."
+          },
+          {
+            "name": "Ntable",
+            "desc": "same as out.N, but in table format (with row and column names). This output is present just if your MATLAB version is not<2013b."
+          },
+          {
+            "name": "Chi2",
+            "desc": "scalar containing $\\chi^2$ index."
+          },
+          {
+            "name": "Chi2pval",
+            "desc": "scalar containing p-value of the $\\chi^2$ index."
+          },
+          {
+            "name": "Phi",
+            "desc": "$\\Phi$ index. Phi is a chi-square-based measure of association that involves dividing the chi-square statistic by the sample size and taking the square root of the result. More precisely \\[ \\Phi= \\sqrt{ \\frac{\\chi^2}{n} } \\] This index lies in the interval $[0 , \\sqrt{\\min[(I-1),(J-1)]}$."
+          },
+          {
+            "name": "CramerV",
+            "desc": "1 x 4 vector that contains Cramer's V index, standard error, z test, and p-value. Cramer'V index is index $\\Phi$ divided by its maximum. More precisely \\[ V= \\sqrt{\\frac{\\Phi}{\\min[(I-1),(J-1)]}}=\\sqrt{\\frac{\\chi^2}{n \\min[(I-1),(J-1)]}} \\] The range of Cramer index is [0, 1]. A Cramer's V in the range of [0, 0.3] is considered as weak, [0.3,0.7] as medium and > 0.7 as strong. The way in which the confidence interval for this index is specified is input option conflimMethodCramerV. If conflimMethodCramerV is 'ncchisq', 'ncchisqadj', we first find a confidence interval for the non centrality parameter $\\Delta$ of the $\\chi^2$ distribution with $df=(I-1)(J-1)$ degrees of freedom. (see Smithson (2003); pp. 39-41) $[\\Delta_L \\Delta_U]$. If input option conflimMethodCramerV is 'ncchisq', confidence interval for $\\Delta$ is transformed into one for $V$ by the following"
+          }
+        ]
+      }
+    ],
+    "see_also": [
+      "crosstab",
+      "rcontFS",
+      "CressieRead",
+      "corr",
+      "corrOrdinal"
+    ],
+    "references": [
+      "Agresti, A. (2002), \"Categorical Data Analysis\", John Wiley & Sons. [pp. 23-26]",
+      "Goodman, L.A. and Kruskal, W.H. (1959), Measures of association for cross classifications II: Further Discussion and References, \"Journal of the American Statistical Association\", Vol. 54, pp. 123-163.",
+      "Goodman, L.A. and Kruskal, W.H. (1963), Measures of association for cross classifications III: Approximate Sampling Theory, \"Journal of the American Statistical Association\", Vol. 58, pp. 310-364.",
+      "Goodman, L.A. and Kruskal, W.H. (1972), Measures of association for cross classifications IV: Simplification of Asymptotic Variances, \"Journal of the American Statistical Association\", Vol. 67, pp. 415-421.",
+      "Liebetrau, A.M. (1983), \"Measures of Association\", Sage University Papers Series on Quantitative Applications in the Social Sciences, 07-004, Newbury Park, CA: Sage. [pp. 49-56]",
+      "Smithson, M.J. (2003), \"Confidence Intervals\", Quantitative Applications in the Social Sciences Series, No. 140. Thousand Oaks, CA: Sage. [pp. 39-41]",
+      "Acknowledgements:"
+    ],
+    "fsda_url": "https://rosa.unipr.it/FSDA/corrNominal.html"
+  },
+  {
+    "name": "tclustIC",
+    "category": "CLUS-RobClaMULT",
+    "description_short": "Computes tclust for different number of groups k and restriction factors c",
+    "description_long": "tclustIC (where the last two letters stand for 'Information Criterion') computes the values of BIC (MIXMIX), ICL (MIXCLA) or CLA (CLACLA), for different values of k (number of groups) and different values of c (restriction factor), for a prespecified level of trimming. If Parallel Computing toolbox is installed, parfor is used to compute tclust for different values of c. In order to minimize randomness, given k, the same subsets are used for each value of c.",
+    "inputs": [
+      {
+        "name": "Y",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "double"
+          ]
+        ],
+        "purpose_short": "Input data",
+        "default": null,
+        "purpose_long": "Input data. Matrix. Data matrix containing n observations on v variables Rows of Y represent observations, and columns represent variables. Observations (rows) with missing (NaN) or or infinite (Inf) values will automatically be excluded from the computations. Data Types - double"
+      },
+      {
+        "name": "kk",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "int16",
+            "vector",
+            "integer"
+          ],
+          [
+            "int32",
+            "vector",
+            "integer"
+          ],
+          [
+            "single",
+            "vector",
+            "integer"
+          ],
+          [
+            "double",
+            "vector",
+            "integer"
+          ]
+        ],
+        "purpose_short": "number of mixture components",
+        "default": null,
+        "purpose_long": "number of mixture components. Integer vector. Integer vector specifying the number of mixture components (clusters) for which the BIC is to be calculated. Vector. The default value of kk is 1:5. Example - 'kk',1:4 Data Types - int16 | int32 | single | double"
+      },
+      {
+        "name": "cc",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double",
+            "vector"
+          ]
+        ],
+        "purpose_short": "values of restriction factor",
+        "default": null,
+        "purpose_long": "values of restriction factor. Vector. A vector specifying the values of the restriction factor which have to be considered for the covariance matrices. The default value of cc is [1 2 4 8 16 32 64 128] Example - 'cc',[1 2 4 8 128] Data Types - double"
+      },
+      {
+        "name": "whichIC",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "char",
+            "choices={'MIXMIX', 'MIXCLA', 'CLACLA', 'ALL'}"
+          ]
+        ],
+        "purpose_short": "type of information criterion",
+        "default": null,
+        "purpose_long": "type of information criterion. Character. Character which specifies which information criteria must be computed for each k (number of groups) and each value of the restriction factor (c). Possible values for whichIC are: 'MIXMIX' = a mixture model is fitted and to compute the information criterion the mixture likelihood is used. This option corresponds to the use of the Bayesian Information criterion (BIC). In output structure out just the matrix out.MIXMIX is given. 'MIXCLA' = a mixture model is fitted but to compute the information criterion the classification likelihood is used. This option corresponds to the use of the Integrated Complete Likelihood (ICL). In output structure out just the matrix out.MIXCLA is given. 'CLACLA' = everything is based on the classification likelihood. This information criterion will be called CLA. In output structure out just the matrix out.CLACLA is given. 'ALL' = both classification and mixture likelihood are used. In this case all the three information criteria CLA, ICL and BIC are computed. In output structure out all the three matrices out.MIXMIX and out.MIXCLA and out.CLACLA are given. Example - 'whichIC','ALL' Data Types - character"
+      },
+      {
+        "name": "alpha",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "single"
+          ],
+          [
+            "double"
+          ]
+        ],
+        "purpose_short": "Global trimming level",
+        "default": null,
+        "purpose_long": "global trimming level. Fraction or number of observations which have to be trimmed. alpha is a scalar between 0 and 0.5 or an integer specifying the number of observations to be trimmed. If alpha = 0 all observations are considered. More in detail, if 0 < alpha < 1 clustering is based on h = fix(n*(1-alpha)) observations. Else if alpha is an integer greater than 1 clustering is based on h=n-floor(alpha). The default value of alpha which is used is 0. Example - 'alpha',0 Data Types - single | double"
+      },
+      {
+        "name": "nsamp",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ]
+        ],
+        "purpose_short": "number of subsamples to extract",
+        "default": null,
+        "purpose_long": "number of subsamples to extract. Scalar or matrix. If nsamp is a scalar it contains the number of subsamples which will be extracted. If nsamp=0 all subsets will be extracted. Remark - if the number of all possible subset is <300 the default is to extract all subsets, otherwise just 300. - If nsamp is a matrix it contains in the rows the indexes of the subsets which have to be extracted. nsamp in this case can be conveniently generated by function subsets. nsamp can have k columns or k*(v+1) columns. If nsamp has k columns the k initial centroids each iteration i are given by X(nsamp(i,:),:) and the covariance matrices are equal to the identity. - If nsamp has k*(v+1) columns the initial centroids and covariance matrices in iteration i are computed as follows X1=X(nsamp(i,:),:) mean(X1(1:v+1,:)) contains the initial centroid for group 1 cov(X1(1:v+1,:)) contains the initial cov matrix for group 1 1 mean(X1(v+2:2*v+2,:)) contains the initial centroid for group 2 cov((v+2:2*v+2,:)) contains the initial cov matrix for group 2 1 ... mean(X1((k-1)*v+1:k*(v+1))) contains the initial centroids for group k cov(X1((k-1)*v+1:k*(v+1))) contains the initial cov matrix for group k REMARK - if nsamp is not a scalar option option below startv1 is ignored. More precisely if nsamp has k columns startv1=0 elseif nsamp has k*(v+1) columns option startv1=1. Example - 'nsamp',1000 Data Types - double"
+      },
+      {
+        "name": "RandNumbForNini",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "single"
+          ],
+          [
+            "double"
+          ]
+        ],
+        "purpose_short": "Pre-extracted random numbers to initialize proportions",
+        "default": null,
+        "purpose_long": "Pre-extracted random numbers to initialize proportions. Matrix. Matrix with size k-by-size(nsamp,1) containing the random numbers which are used to initialize the proportions of the groups. This option is effective just if nsamp is a matrix which contains pre-extracted subsamples and k is a scalar. The purpose of this option is to enable the user to replicate the results. The default value of RandNumbForNini is empty, that is random numbers from uniform are used. Example - 'RandNumbForNini','' Data Types - single | double"
+      },
+      {
+        "name": "refsteps",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "single"
+          ],
+          [
+            "double"
+          ]
+        ],
+        "purpose_short": "Number of refining iterations",
+        "default": null,
+        "purpose_long": "Number of refining iterations. Scalar. Number of refining iterations in subsample. Default is 15. refsteps = 0 means \"raw-subsampling\" without iterations. Example - 'refsteps',10 Data Types - single | double"
+      },
+      {
+        "name": "reftol",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "single"
+          ],
+          [
+            "double"
+          ]
+        ],
+        "purpose_short": "Tolerance for the refining steps",
+        "default": null,
+        "purpose_long": "scalar. Default value of tolerance for the refining steps. The default value is 1e-14; Example - 'reftol',1e-05 Data Types - single | double"
+      },
+      {
+        "name": "equalweights",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "logical"
+          ]
+        ],
+        "purpose_short": "cluster weights in the concentration and assignment steps",
+        "default": null,
+        "purpose_long": "cluster weights in the concentration and assignment steps. Logical. A logical value specifying whether cluster weights shall be considered in the concentration, assignment steps and computation of the likelihood. The default value is false. Example - 'equalweights',true Data Types - Logical"
+      },
+      {
+        "name": "startv1",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "single"
+          ],
+          [
+            "double"
+          ]
+        ],
+        "purpose_short": "Define how to initialize centroids and cov matrices",
+        "default": null,
+        "purpose_long": "how to initialize centroids and cov matrices. Scalar. If startv1 is 1 then initial centroids and and covariance matrices are based on (v+1) observations randomly chosen, else each centroid is initialized taking a random row of input data matrix and covariance matrices are initialized with identity matrices. Remark 1- in order to start with a routine which is in the required parameter space, eigenvalue restrictions are immediately applied. The default value of startv1 is 1. Remark 2 - option startv1 is used just if nsamp is a scalar (see for more details the help associated with nsamp). Example - 'startv1',1 Data Types - single | double"
+      },
+      {
+        "name": "restrtype",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "char",
+            "choices={'eigen', 'deter'}"
+          ]
+        ],
+        "purpose_short": "type of restriction",
+        "default": "'eigen'",
+        "purpose_long": "type of restriction. Character. The type of restriction to be applied on the cluster scatter matrices. Valid values are 'eigen' (default), or 'deter'. eigen implies restriction on the eigenvalues while deter implies restriction on the determinants. If restrtype is 'deter' it is possible to control the constraints on the shape matrices using optional input argument cshape. Example - 'restrtype','deter' Data Types - char"
+      },
+      {
+        "name": "plots",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "single"
+          ],
+          [
+            "double"
+          ]
+        ],
+        "purpose_short": "plot on the screen",
+        "default": null,
+        "purpose_long": "Plot on the screen. Scalar. If plots = 1, a plot of the BIC (MIXMIX), ICL (MIXCLA)curve and CLACLA is shown on the screen. The plots which are shown depend on the input option 'whichIC'. Example - 'plots',1 Data Types - single | double"
+      },
+      {
+        "name": "numpool",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double"
+          ]
+        ],
+        "purpose_short": "number of pools for parellel computing",
+        "default": null,
+        "purpose_long": "number of pools for parallel computing. Scalar. If numpool > 1, the routine automatically checks if the Parallel Computing Toolbox is installed and distributes the random starts over numpool parallel processes. If numpool <= 1, the random starts are run sequentially. By default, numpool is set equal to the number of physical cores available in the CPU (this choice may be inconvenient if other applications are running concurrently). The same happens if the numpool value chosen by the user exceeds the available number of cores. REMARK 1: up to R2013b, there was a limitation on the maximum number of cores that could be addressed by the parallel processing toolbox (8 and, more recently, 12). From R2014a, it is possible to run a local cluster of more than 12 workers. REMARK 2: Unless you adjust the cluster profile, the default maximum number of workers is the same as the number of computational (physical) cores on the machine. REMARK 3: In modern computers the number of logical cores is larger than the number of physical cores. By default, MATLAB is not using all logical cores because, normally, hyper-threading is enabled and some cores are reserved to this feature. REMARK 4: It is because of Remarks 3 that we have chosen as default value for numpool the number of physical cores rather than the number of logical ones. The user can increase the number of parallel pool workers allocated to the multiple start monitoring by: - setting the NumWorkers option in the local cluster profile settings to the number of logical cores (Remark 2). To do so go on the menu \"Home|Parallel|Manage Cluster Profile\" and set the desired \"Number of workers to start on your local machine\". - setting numpool to the desired number of workers; Therefore, *if a parallel pool is not already open*, UserOption numpool (if set) overwrites the number of workers set in the local/current profile. Similarly, the number of workers in the local/current profile overwrites default value of 'numpool' obtained as feature('numCores') (i.e. the number of physical cores). Example - 'numpool',4 Data Types - double"
+      },
+      {
+        "name": "cleanpool",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "single"
+          ],
+          [
+            "double"
+          ]
+        ],
+        "purpose_short": "determines if the parallel pool has to be cleaned after the execution of the routine",
+        "default": null,
+        "purpose_long": "clean pool. Scalar. cleanpool is 1 if the parallel pool has to be cleaned after the execution of the routine. Otherwise it is 0. The default value of cleanpool is 1. Clearly this option has an effect just if previous option numpool is > 1. Example - 'cleanpool',1 Data Types - single | double"
+      },
+      {
+        "name": "msg",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "single"
+          ],
+          [
+            "double"
+          ]
+        ],
+        "purpose_short": "Message on the screen",
+        "default": null,
+        "purpose_long": "Message on the screen. Scalar. Scalar which controls whether to display or not messages about code execution. Example - 'msg',1 Data Types - single | double"
+      },
+      {
+        "name": "nocheck",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "single"
+          ],
+          [
+            "double"
+          ]
+        ],
+        "purpose_short": "Check input arguments",
+        "default": null,
+        "purpose_long": "Check input arguments. Scalar. If nocheck is equal to 1 no check is performed on matrix Y. As default nocheck=0. Example - 'nocheck',10 Data Types - single | double"
+      },
+      {
+        "name": "Ysave",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "single"
+          ],
+          [
+            "double"
+          ]
+        ],
+        "purpose_short": "Save input matrix",
+        "default": null,
+        "purpose_long": "save input matrix. Scalar. Scalar that is set to 1 to request that the input matrix Y is saved into the output structure out. Default is 1, that is matrix Y is saved inside output structure out. Example - 'Ysave',1 Data Types - single | double"
+      },
+      {
+        "name": "UnitsSameGroup",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "double",
+            "vector"
+          ],
+          [
+            "single",
+            "vector"
+          ]
+        ],
+        "purpose_short": "Units with same labels",
+        "default": null,
+        "purpose_long": "Units with same labels. Numeric vector. List of the units which must (whenever possible) have the same label. For example if UnitsSameGroup=[20 26], it means that group which contains unit 20 is always labelled with number 1. Similarly, the group which contains unit 26 is always labelled with number 2, (unless it is found that unit 26 already belongs to group 1). In general, group which contains unit UnitsSameGroup(r) where r=2, ...length(kk)-1 is labelled with number r (unless it is found that unit UnitsSameGroup(r) has already been assigned to groups 1, 2, ..., r-1). The default value of UnitsSameGroup is '' that is consistent labels are not imposed. Example - 'UnitsSameGroup',[12 20] Data Types - single | double"
+      },
+      {
+        "name": "cshape",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "single",
+            ">=1"
+          ],
+          [
+            "double",
+            ">=1"
+          ]
+        ],
+        "purpose_short": "constraint to apply to each of the shape matrices",
+        "default": null,
+        "purpose_long": "constraint to apply to each of the shape matrices. Scalar greater or equal than 1. This options only works is 'restrtype' is 'deter'. When restrtype is deter the default value of the \"shape\" constraint (as defined below) applied to each group is fixed to $c_{shape}=10^{10}$, to ensure the procedure is (virtually) affine equivariant. In other words, the decomposition or the $j$-th scatter matrix $\\Sigma_j$ is \\[ \\Sigma_j=\\lambda_j^{1/v} \\Omega_j \\Gamma_j \\Omega_j' \\] where $\\Omega_j$ is an orthogonal matrix of eigenvectors, $\\Gamma_j$ is a diagonal matrix with $|\\Gamma_j|=1$ and with elements $\\{\\gamma_{j1},...,\\gamma_{jv}\\}$ in its diagonal (proportional to the eigenvalues of the $\\Sigma_j$ matrix) and $|\\Sigma_j|=\\lambda_j$. The $\\Gamma_j$ matrices are commonly known as \"shape\" matrices, because they determine the shape of the fitted cluster components. The following $k$ constraints are then imposed on the shape matrices: \\[ \\frac{\\max_{l=1,...,v} \\gamma_{jl}}{\\min_{l=1,...,v} \\gamma_{jl}}\\leq c_{shape}, \\text{ for } j=1,...,k, \\] In particular, if we are ideally searching for spherical clusters it is necessary to set $c_{shape}=1$. Models with variable volume and spherical clusters are handled with 'restrtype' 'deter', $1<restrfactor<\\infty$ and $cshape=1$. The $restrfactor=cshape=1$ case yields a very constrained parametrization because it implies spherical clusters with equal volumes. Example - 'cshape',10 Data Types - single | double Remark: The user should only give the input arguments that have to change their default value. The name of the input arguments needs to be followed by their value. The order of the input arguments is of no importance."
+      }
+    ],
+    "outputs": [],
+    "see_also": [
+      "tclust",
+      "tclustICsol",
+      "tclustICplot",
+      "carbikeplot"
+    ],
+    "references": [
+      "Cerioli, A., Garcia-Escudero, L.A., Mayo-Iscar, A. and Riani M. (2017), Finding the Number of Groups in Model-Based Clustering via Constrained Likelihoods, \"Journal of Computational and Graphical Statistics\", pp. 404-416, https://doi.org/10.1080/10618600.2017.1390469"
+    ],
+    "fsda_url": "https://rosa.unipr.it/FSDA/tclustIC.html"
+  },
+  {
+    "name": "histFS",
+    "category": "VIS-Reg",
+    "description_short": "Plots a histogram with the elements in each bin grouped according to a vector of labels",
+    "description_long": "",
+    "inputs": [
+      {
+        "name": "y",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "numeric",
+            "vector"
+          ]
+        ],
+        "purpose_short": "vector of n elements to bin",
+        "default": null,
+        "purpose_long": "vector of n elements to bin. Vector. Vector which contains the elements which have to be binned. Data Types - numeric vector"
+      },
+      {
+        "name": "nbins",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "numeric",
+            "vector"
+          ]
+        ],
+        "purpose_short": "the number of bins",
+        "default": null,
+        "purpose_long": "number of bins or bin edges. Scalar or vector. If nbins is a scalar, then we assume that it is referred to the number of bins. Alternatively if nbins is a numeric vector of length>1, we assume that nbins(1) is the leading edge of the first bin, and nbins(end) is the trailing edge of the last bin elements. The elements of input vector y are binned into nbins equally spaced containers if nbins is a scalar or into length(nbins)-1 containers if nbins is not a scalar. Data Types - numeric vector"
+      },
+      {
+        "name": "gy",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "numeric",
+            "vector"
+          ]
+        ],
+        "purpose_short": "identifier vector",
+        "default": null,
+        "purpose_long": "identifier vector. Vector. Vector of n numeric or non numeric identifiers for the group of each element in y. If there are k groups in y, unique(gy) = k. Data Types - numeric vector or cell array of character vectors or string array"
+      },
+      {
+        "name": "gylab",
+        "kind": "ordered",
+        "matlab_type": [
+          [
+            "string"
+          ],
+          [
+            "cell"
+          ]
+        ],
+        "purpose_short": "legend labels",
+        "default": null,
+        "purpose_long": "legend labels. vector of strings | cell array of character vectors. Legend labels identifying the groups of each element in y. length(gylab) = length(unique(gy)) must hold. If not specified, gylab is set to '' and legends are not displayed. If gylab = {}, default legend labels are generated. If gylab is a cell of strings of length 3, e.g. gylab = {'G1' 'G2' 'G3'}, such strings are used for the legends. Note that this is a positional input argument. Example - {'G1' 'G2'} Data Types - cell array of character vectors or string array"
+      },
+      {
+        "name": "ax",
+        "kind": "ordered",
+        "matlab_type": [
+          [
+            "matlab.graphics.axis.Axes"
+          ]
+        ],
+        "purpose_short": "plots into ax instead of gca",
+        "default": null,
+        "purpose_long": "plots into ax instead of gca. Axis handle. The axis handle where to plot the grouped histogram (e.g. a traditional histogram plot to be superimposed). Default is gca. Note that this is a positional input argument. Example - gca Data Types - graphics handle"
+      },
+      {
+        "name": "barcolors",
+        "kind": "ordered",
+        "matlab_type": [
+          [
+            "numeric"
+          ],
+          [
+            "char"
+          ]
+        ],
+        "purpose_short": "colors of the bars",
+        "default": null,
+        "purpose_long": "colors of the bars. char or matrix. Vector containing the strings of the colors to use (e.g. 'rgy') or RGB matrix of the colors used for the groups (e.g. [1 0 0; 0 0 1]). If the number of colors supplied is smaller than the number of groups the program displays an error. Note that this is a positional input argument. Example - 'rgy' Data Types - character or numeric matrix"
+      },
+      {
+        "name": "W",
+        "kind": "ordered",
+        "matlab_type": [
+          [
+            "numeric",
+            "vector"
+          ]
+        ],
+        "purpose_short": "Weights",
+        "default": null,
+        "purpose_long": "Weights. Vector. Vector which contains optional weights associated to the elements of y. Note that this is a positional input argument. Example - [10 20 3000] Data Types - numeric vector"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "ng",
+        "matlab_type": [
+          [
+            "double"
+          ]
+        ],
+        "short_desc": "number of elements in each container for each group.",
+        "long_desc": "number of elements in each container for each group. Matrix. A matrix with a column for each group and a row for each bin. In ng, column i contains the the number of elements of group i in each bin. For example ng(2,3) contains the number of elements belonging to the third group included into the second container.",
+        "fields": []
+      },
+      {
+        "name": "hb",
+        "matlab_type": [
+          [
+            "matlab.graphics.chart.primitive.Bar"
+          ]
+        ],
+        "short_desc": "Bar array handles.",
+        "long_desc": "Bar array handles. Vector. A vector containing the handles to the barseries objects.",
+        "fields": []
+      }
+    ],
+    "see_also": [
+      "hist",
+      "histogram"
+    ],
+    "references": [
+      "Tufte E.R. (1983), \"The visual display of quantitative information\", Graphics Press, Cheshire."
+    ],
+    "fsda_url": "https://rosa.unipr.it/FSDA/histFS.html"
+  },
+  {
+    "name": "logfactorial",
+    "category": "UTISTAT",
+    "description_short": "Computes the logarithm of the factorial of x",
+    "description_long": null,
+    "inputs": [
+      {
+        "name": "x",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "numeric"
+          ]
+        ],
+        "purpose_short": null,
+        "default": null,
+        "purpose_long": null
+      }
+    ],
+    "outputs": [
+      {
+        "name": "y",
+        "matlab_type": [
+          [
+            "double"
+          ]
+        ],
+        "short_desc": null,
+        "long_desc": null,
+        "fields": []
+      }
+    ],
+    "see_also": [],
+    "references": [],
+    "fsda_url": "https://rosa.unipr.it/FSDA/logfactorial.html"
+  },
+  {
+    "name": "GowerIndex",
+    "category": "CLUS-RobClaMULT",
+    "description_short": "Computes matrix of similarity indexes using Gower metric",
+    "description_long": "This function computes the matrix of Gower similarity indexes",
+    "inputs": [
+      {
+        "name": "Y",
+        "kind": "required",
+        "matlab_type": [
+          [
+            "double"
+          ],
+          [
+            "single"
+          ]
+        ],
+        "purpose_short": "Input data",
+        "default": null,
+        "purpose_long": "Input data. 2D array or MATLAB table . n x p data matrix; n observations and p variables. Rows of Y represent observations, and columns represent variables. Missing values (NaN's) and infinite values (Inf's) are allowed, since observations (rows) with missing or infinite values will automatically be excluded from the computations. Data Types - single|double"
+      },
+      {
+        "name": "l",
+        "kind": "namevalue",
+        "matlab_type": [
+          [
+            "numeric",
+            "vector"
+          ]
+        ],
+        "purpose_short": "type of variable",
+        "default": null,
+        "purpose_long": "type of variable. Vector. Vector of length p which specifies the type of variable for each column of the input matrix Y. $l(j)=1$ => $j$-th variable assumes orderable values (quantitative variable). $l(j)=2$ => $j$-th variable is binary (just values 0 and 1). $l(j)=3$ => $j$-th variable assumes categorical (unorderable) values. $j =1, 2, \\ldots, p$. If l is omitted or is empty the routine automatically tries to detect the type of variable. For example, if a variable assumes just values 0 and 1 the corresponding variable is classified as binary. If a column of the input dataset assumes just integer values (without decimal points) and the number of unique elements is not greater than 20 the corresponding variable is classified as categorical, else the variable is classified as quantitative. Example - 'l',[3 3 1] Data Types - double"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "S",
+        "matlab_type": [
+          [
+            "double"
+          ]
+        ],
+        "short_desc": "matrix with Gower similarity coefficients.",
+        "long_desc": "matrix with Gower similarity coefficients. n-by-n symmetric matrix. n-by-n matrix whose i-th j-th entry contains the Gower similarity index between row i and row j of input matrix Y.",
+        "fields": []
+      },
+      {
+        "name": "Stable",
+        "matlab_type": [
+          [
+            "double"
+          ]
+        ],
+        "short_desc": "matrix with Gower similarity coefficients in table format.",
+        "long_desc": "matrix with Gower similarity coefficients in table format. n-by-n table. n-by-n table whose i-th j-th entry contains the Gower similarity index between row i and row j of input matrix Y.",
+        "fields": []
+      }
+    ],
+    "see_also": [
+      "pdist",
+      "tclust"
+    ],
+    "references": [
+      "Gower, J. C. (1971), \"A general coefficient of similarity and some of its properties\", Biometrics, pp. 857-871.",
+      "Grane', A., and Romera R. (2018), \"On Visualizing Mixed-Type Data: A Joint Metric Approach to Profile Construction and Outlier Detection\", Sociological Methods & Research, Vol. 47, pp. 207-239",
+      "Acknowledgements:",
+      "This function has been written jointly with Professor Aurea Grane', Universidad Carlos III de Madrid, Statistics Department."
+    ],
+    "fsda_url": "https://rosa.unipr.it/FSDA/GowerIndex.html"
+  }
+]
