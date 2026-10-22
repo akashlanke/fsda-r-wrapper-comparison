@@ -50,8 +50,16 @@
 - [x] #p1 Write `gen_r.py` + `tmp_spec.json`; generate `fsdabridgeGen` (B); dry-run the full IR
 - [x] #p1 Build C from A + overlay
 - [x] #p1 Run rows 1–14; save logs
-- [ ] #p1 Write `docs/r-wrapper-comparison.md` with matrix, evidence and recommendation
+- [x] #p1 Write `docs/r-wrapper-comparison.md` with matrix, evidence and recommendation
 
-### Done
+### Done (2026-10-22)
 
-(see dated notes below)
+All five tasks above. Notes:
+
+- FSDA's `functionSignatures.json` covers 86 of 389 public routines, and mahalFS, Score, mcd and
+  logfactorial are not among them; their `tmp_spec.json` records are hand-written signatures pushed
+  through `parse_fsda._build_ir_record`. This, not the generator, limits approach B's coverage.
+- JSON input types are editor hints (`tclustIC` `kk` is typed int16/int32 but takes R doubles), so B
+  must not enforce them in R.
+- Re-running roxygen on A drops `importFrom(utils,.DollarNames)` from its hand-edited NAMESPACE.
+- Recommendation: C (see `docs/r-wrapper-comparison.md`).
